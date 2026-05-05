@@ -86,12 +86,12 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
             className="glass-panel p-8"
           >
             <h3
-              className={`mb-4 text-2xl font-bold ${isDark ? "text-cyan-200" : "text-teal-800"}`}
+              className={`mb-4 text-2xl font-bold tracking-tight bg-linear-to-b from-white to-black bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300`}
             >
               Our Mission
             </h3>
             <p
-              className={`leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
+              className={`leading-relaxed text-slate-600`}
             >
               To provide acessible,high-impact IT services that empower businesses and promote digital inclusion in Ghana.
             </p>
@@ -105,12 +105,12 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
             className="glass-panel p-8"
           >
             <h3
-              className={`mb-4 text-2xl font-bold ${isDark ? "text-cyan-200" : "text-teal-800"}`}
+              className={`mb-4 text-2xl font-bold tracking-tight bg-linear-to-b from-white to-black bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300`}
             >
               Our Vision
             </h3>
             <p
-              className={`leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
+              className={`leading-relaxed text-slate-600`}
             >
               To lead in tech innovation that transforms lives,empowers Africa, and impacts the world.
             </p>
@@ -137,14 +137,14 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
                 variants={itemVariants}
                 className="glass-panel p-6 text-center transition-all hover:border-teal-300/50 dark:hover:border-cyan-400/40"
               >
-                <div className="text-5xl mb-3">{value.icon}</div>
+                <div className="text-5xl mb-3 flex justify-center">{value.icon}</div>
                 <h4
-                  className={`mb-2 font-bold ${isDark ? "text-cyan-200" : "text-teal-800"}`}
+                  className={`mb-2 font-bold tracking-tight bg-linear-to-b from-white to-black bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300`}
                 >
                   {value.title}
                 </h4>
                 <p
-                  className={`text-sm ${isDark ? "text-slate-400" : "text-slate-600"}`}
+                  className={`text-sm "text-slate-600`}
                 >
                   {value.description}
                 </p>

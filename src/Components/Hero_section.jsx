@@ -17,7 +17,11 @@ export default function HeroSection() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
   };
 
   const imageVariants = {
@@ -33,44 +37,27 @@ export default function HeroSection() {
   const floatingVariants = {
     animate: {
       y: [0, -12, 0],
-      transition: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+      transition: {
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      },
     },
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden ">
-      <div
-        className={`pointer-events-none absolute inset-0 ${isDark ? "bg-slate-950/20" : "bg-white/30"}`}
-      />
-      <div
-        className={`absolute top-24 -right-16 h-80 w-80 rounded-full blur-3xl animate-blob ${
-          isDark
-            ? "bg-violet-600/25 mix-blend-screen"
-            : "bg-teal-400/25 mix-blend-multiply"
-        }`}
-      />
-      <div
-        className={`animation-delay-2000 absolute bottom-0 -left-12 h-80 w-80 rounded-full blur-3xl animate-blob ${
-          isDark
-            ? "bg-cyan-500/20 mix-blend-screen"
-            : "bg-indigo-400/20 mix-blend-multiply"
-        }`}
-      />
-      <div
-        className={`absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl ${
-          isDark ? "bg-indigo-600/15" : "bg-sky-300/20"
-        }`}
-      />
-
+    <section className="relative min-h-screen overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-32 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          
+          {/* Left Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="space-y-8"
           >
-            <motion.div variants={itemVariants}> 
+            <motion.div variants={itemVariants}>
               <div
                 className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold shadow-sm ${
                   isDark
@@ -79,7 +66,11 @@ export default function HeroSection() {
                 }`}
               >
                 <span
-                  className={`h-2 w-2 rounded-full ${isDark ? "bg-cyan-400 shadow-[0_0_12px_#22d3ee]" : "bg-teal-500"}`}
+                  className={`h-2 w-2 rounded-full ${
+                    isDark
+                      ? "bg-cyan-400 shadow-[0_0_12px_#22d3ee]"
+                      : "bg-teal-500"
+                  }`}
                 />
                 Solutions engineered for success
               </div>
@@ -115,9 +106,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + idx * 0.1 }}
                 >
-                  <div
-                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-teal-500 to-indigo-600 dark:from-cyan-400 dark:to-violet-600`}
-                  >
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-teal-500 to-indigo-600 dark:from-cyan-400 dark:to-violet-600">
                     <svg
                       className="h-4 w-4 text-white"
                       fill="currentColor"
@@ -130,8 +119,11 @@ export default function HeroSection() {
                       />
                     </svg>
                   </div>
+
                   <span
-                    className={`font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}
+                    className={`font-medium ${
+                      isDark ? "text-slate-300" : "text-slate-700"
+                    }`}
                   >
                     {feature}
                   </span>
@@ -150,20 +142,8 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.97 }}
               >
                 Get Started
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
               </MotionLink>
+
               <MotionLink
                 to="/services"
                 className="btn-outline-themed flex items-center justify-center px-8 py-4 text-lg font-bold"
@@ -173,34 +153,9 @@ export default function HeroSection() {
                 Explore Services
               </MotionLink>
             </motion.div>
-
-           { /*
-            <motion.div
-              variants={itemVariants}
-              className={`grid grid-cols-3 gap-4 border-t pt-8 ${isDark ? "border-white/10" : "border-slate-200/80"}`}
-            >
-              {[
-                { value: "150+", label: "Clients" },
-                { value: "200+", label: "Projects" },
-                { value: "25+", label: "Team" },
-              ].map((stat, idx) => (
-                <div key={idx} className="text-center">
-                  <p
-                    className={`font-display text-2xl font-bold md:text-3xl ${isDark ? "text-cyan-200" : "text-teal-700"}`}
-                  >
-                    {stat.value}
-                  </p>
-                  <p
-                    className={`text-sm ${isDark ? "text-slate-400" : "text-slate-600"}`}
-                  >
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
-*/}
           </motion.div>
 
+          {/* Right Image */}
           <motion.div
             variants={imageVariants}
             initial="hidden"
@@ -219,6 +174,7 @@ export default function HeroSection() {
                     : "bg-linear-to-br from-teal-400/35 via-cyan-400/35 to-indigo-500/35"
                 }`}
               />
+
               <div
                 className={`relative overflow-hidden rounded-3xl border shadow-2xl ${
                   isDark
@@ -228,7 +184,7 @@ export default function HeroSection() {
               >
                 <img
                   src={HERO_IMAGE}
-                  alt="Futuristic digital sphere of connected displays and innovation"
+                  alt="Futuristic digital innovation"
                   className="aspect-4/3 w-full object-cover object-center md:aspect-5/4 lg:aspect-auto lg:max-h-[min(560px,78vh)] lg:min-h-95"
                   width={1200}
                   height={900}

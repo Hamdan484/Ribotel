@@ -7,31 +7,31 @@ export default function TeamPreview() {
   const team = [
     {
       id: 1,
-      name: "Simon Akaribo",
+      name: "Simon",
       role: "Founder & CEO",
       emoji: "👨‍💼",
       bio: "Tech visionary with passion for digital transformation and community empowerment.",
     },
     {
       id: 2,
-      name: "Jane Mensah",
-      role: "Lead Developer",
+      name: "Ebenezer",
+      role: "Full-Stack Developer",
       emoji: "👩‍💻",
       bio: "Full-stack expert with expertise in building scalable web solutions.",
     },
     {
       id: 3,
-      name: "Kwame Asante",
-      role: "Design Lead",
-      emoji: "👨‍🎨",
-      bio: "Creative designer focused on user experience and modern aesthetics.",
+      name: "Hamdan",
+      role: "Frontend Developer",
+      emoji: "👩‍💻",
+      bio: "Creative frontend developer passionate about building intuitive user experiences.",
     },
     {
       id: 4,
-      name: "Ama Owusu",
-      role: "Business Manager",
-      emoji: "👩‍💼",
-      bio: "Strategic business leader with focus on client success and growth.",
+      name: "Solomon",
+      role: "Graphic Designer",
+      emoji: "👨‍🎨",
+      bio: "Graphic designer with a knack for creating visually stunning and impactful designs.",
     },
   ];
 
@@ -100,7 +100,7 @@ export default function TeamPreview() {
 
               {/* Role */}
               <div
-                className={`mb-3 text-sm font-semibold ${isDark ? "text-cyan-300" : "text-teal-700"}`}
+                className={`mb-3 text-sm bg-linear-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300`}
               >
                 {member.role}
               </div>

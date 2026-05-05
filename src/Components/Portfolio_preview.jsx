@@ -29,9 +29,9 @@ export default function PortfolioPreview() {
     },
     {
       id: 3,
-      title: "Mobile App",
-      category: "Mobile Development",
-      description: "Cross-platform mobile application with offline support",
+      title: "Academic Writing",
+      category: "Academics",
+      description: "Academic writing and research support platform for students and researchers",
       image: Academic_writing_image,
       color: "from-blue-400 to-cyan-400",
     },
@@ -106,12 +106,12 @@ export default function PortfolioPreview() {
               {/* Content */}
               <div className="p-6">
                 <div
-                  className={`mb-2 text-sm font-semibold ${isDark ? "text-cyan-300" : "text-teal-700"}`}
+                  className={`mb-2 text-sm font-semibold tracking-tight bg-linear-to-b from-orange-500 to-black bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300`}
                 >
                   {project.category}
                 </div>
                 <h3
-                  className={`mb-3 text-xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}
+                  className={`mb-3 text-xl font-bold tracking-tight bg-linear-to-b from-black to-blue-500 bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300`}
                 >
                   {project.title}
                 </h3>

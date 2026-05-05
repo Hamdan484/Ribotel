@@ -33,6 +33,13 @@ export default function ServicesSection() {
         "Expert guidance to align your IT strategy with business objectives.",
       color: "from-blue-400 to-cyan-400",
     },
+    {
+      id: 4,
+      icon: (<ion-icon name="book-outline"></ion-icon>),
+      title: " Academic Writing",
+      description:
+        "Helping students and researchers excel with expert academic writing and research support services.",
+    },
   ];
 
   const containerVariants = {

@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section 
       <section
         className={`border-y py-16 md:py-24 ${
           isDark
@@ -146,7 +146,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* CTA Section */}
       <CTA />

@@ -35,6 +35,13 @@ export default function Services() {
     },
     {
       id: 4,
+      icon: (<ion-icon name="book-outline"></ion-icon>),
+      title: " Academic Writing",
+      description:
+        "Helping students and researchers excel with expert academic writing and research support services.",
+    },
+    {
+      id: 5,
       icon: "🎓",
       title: "Training Programs",
       description:
@@ -99,12 +106,12 @@ export default function Services() {
             >
               <div className="text-5xl mb-4">{service.icon}</div>
               <h3
-                className={`mb-3 text-xl font-bold ${isDark ? "text-cyan-200" : "text-teal-800"}`}
+                className={`mb-3 text-xl font-bold ${isDark ? "text-cyan-600" : "text-teal-800"}`}
               >
                 {service.title}
               </h3>
               <p
-                className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
+                className={`text-sm leading-relaxed ${isDark ? "text-slate-500" : "text-slate-600"}`}
               >
                 {service.description}
               </p>

@@ -145,15 +145,15 @@
 
 @layer components {
   .section-band {
-    @apply py-16 md:py-24 lg:py-32 border-y border-slate-200/60 dark:border-white/[0.07] bg-white/65 dark:bg-slate-950/40 backdrop-blur-2xl;
-  }
+  @apply py-16 md:py-24 lg:py-32 border-y border-slate-200/60 dark:border-white/[0.07] bg-transparent;
+}
 
   .glass-panel {
     @apply rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-slate-950/50 backdrop-blur-xl shadow-[0_8px_40px_-16px_rgba(15,23,42,0.2)] dark:shadow-[0_8px_50px_-20px_rgba(56,189,248,0.12)];
   }
 
   .btn-gradient {
-    @apply rounded-xl bg-gradient-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-cyan-500 dark:via-sky-500 dark:to-violet-600 text-white font-semibold shadow-lg shadow-teal-500/20 dark:shadow-cyan-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/25 dark:hover:shadow-cyan-500/35 hover:brightness-[1.03];
+    @apply rounded-xl bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 dark:from-cyan-500 dark:via-sky-500 dark:to-violet-600 text-white font-semibold shadow-lg shadow-teal-500/20 dark:shadow-cyan-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/25 dark:hover:shadow-cyan-500/35 hover:brightness-[1.03];
   }
 
   .btn-outline-themed {
