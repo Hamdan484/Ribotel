@@ -57,7 +57,7 @@ export default function Navbar() {
                   className="group relative font-medium text-slate-600 transition-colors hover:text-teal-700 dark:text-slate-300 dark:hover:text-cyan-200"
                 >
                   {link.name}
-                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-teal-500 to-indigo-500 transition-all duration-300 group-hover:w-full dark:from-cyan-400 dark:to-violet-400" />
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-linear-to-r from-teal-500 to-indigo-500 transition-all duration-300 group-hover:w-full dark:from-cyan-400 dark:to-violet-400" />
                 </Link>
               </motion.div>
             ))}

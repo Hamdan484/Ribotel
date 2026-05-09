@@ -94,9 +94,9 @@ export default function ContactSection() {
             Get In Touch
           </div>
 
-          <h2 className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl">
+          <h2 className="mb-6 text-4xl font-bold tracking-tight text-slate-600 md:text-5xl lg:text-6xl dark:text-slate-50">
             Contact{" "}
-            <span className="bg-gradient-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-teal-500 to-indigo-500 bg-clip-text text-transparent">
               Us Today
             </span>
           </h2>

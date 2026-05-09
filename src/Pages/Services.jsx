@@ -79,7 +79,7 @@ export default function ServicesSection() {
           </div>
           <h2 className="mb-6 font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl dark:text-slate-50">
             Services We{" "}
-            <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
+            <span className="bg-linear-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
               Offer
             </span>
           </h2>
@@ -111,7 +111,7 @@ export default function ServicesSection() {
               >
                 {/* Icon */}
                 <motion.div
-                  className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center text-4xl mb-6 shadow-lg group-hover:shadow-xl transition-shadow`}
+                  className={`w-16 h-16 rounded-xl bg-linear-to-br ${service.color} flex items-center justify-center text-4xl mb-6 shadow-lg group-hover:shadow-xl transition-shadow`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >

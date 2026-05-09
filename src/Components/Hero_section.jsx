@@ -182,10 +182,10 @@ export default function HeroSection() {
                     : "border-slate-200/80 bg-white/90 ring-1 ring-slate-200/60"
                 }`}
               >
-                <img
+                <img 
                   src={HERO_IMAGE}
                   alt="Futuristic digital innovation"
-                  className="aspect-4/3 w-full object-cover object-center md:aspect-5/4 lg:aspect-auto lg:max-h-[min(560px,78vh)] lg:min-h-95"
+                  className="hidden md:block aspect-4/3 w-full object-cover object-center md:aspect-5/4 lg:aspect-auto lg:max-h-[min(560px,78vh)] lg:min-h-95"
                   width={1200}
                   height={900}
                   loading="eager"

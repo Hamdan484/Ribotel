@@ -47,15 +47,15 @@ export default function Footer() {
     <footer
       className={`transition-colors duration-300 ${
         isDark
-          ? "border-t border-white/10 bg-gradient-to-b from-slate-950/95 to-[#020308] text-white"
-          : "border-t border-slate-200/80 bg-gradient-to-b from-white/90 to-slate-50/95 text-slate-900"
+          ? "border-t border-white/10 bg-linear-to-b from-slate-950/95 to-[#020308] text-white"
+          : "border-t border-slate-200/80 bg-linear-to-b from-white/90 to-slate-50/95 text-slate-900"
       }`}
     >
       <motion.div
         className={`py-12 md:py-16 ${
           isDark
-            ? "border-b border-white/5 bg-gradient-to-r from-slate-950/80 via-violet-950/20 to-slate-950/80"
-            : "border-b border-slate-200/60 bg-gradient-to-r from-teal-50/90 via-white to-indigo-50/80"
+            ? "border-b border-white/5 bg-linear-to-r from-slate-950/80 via-violet-950/20 to-slate-950/80"
+            : "border-b border-slate-200/60 bg-linear-to-r from-teal-50/90 via-white to-indigo-50/80"
         }`}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

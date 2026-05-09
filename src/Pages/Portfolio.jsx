@@ -194,8 +194,7 @@ export default function PortfolioSection() {
                     {categories.find((c) => c.id === project.category)?.name}
                   </div>
                   <h3
-                    className={`mb-3 font-display text-xl font-bold ${
-                      isDark ? "text-slate-100" : "text-slate-900"
+                    className={`mb-3 font-display text-xl tracking-tight bg-linear-to-b from-black to-blue-500 bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300
                     }`}
                   >
                     {project.title}
@@ -213,7 +212,7 @@ export default function PortfolioSection() {
                     }`}
                     whileHover={{ x: 5 }}
                   >
-                    <span> <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a></span>
+                    <span> <a href={project.link} target="_blank" rel="noopener noreferrer font-semibold tracking-tight bg-linear-to-b from-orange-500 to-black bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300">View Project</a></span>
                     <svg
                       className="w-4 h-4 group-hover/link:translate-x-1 transition-transform"
                       fill="none"

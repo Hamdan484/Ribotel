@@ -83,9 +83,9 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="mb-6 font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl dark:text-slate-50">
+            <h1 className="mb-6 font-display  text-4xl font-bold tracking-tight text-slate-600 md:text-5xl lg:text-6xl dark:text-slate-50">
               About{" "}
-              <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
+              <span className="font-bold tracking-tight bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300 ">
                 Ribotel
               </span>
             </h1>
@@ -114,9 +114,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
             >
               <div className="text-5xl mb-4">🎯</div>
               <h2
-                className={`mb-4 font-display text-3xl font-bold ${
-                  isDark ? "text-cyan-200" : "text-teal-800"
-                }`}
+                className={`mb-4 font-display text-3xl font-bold bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300`}
               >
                 Our Mission
               </h2>
@@ -137,9 +135,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
             >
               <div className="text-5xl mb-4">🌟</div>
               <h2
-                className={`mb-4 font-display text-3xl font-bold ${
-                  isDark ? "text-cyan-200" : "text-teal-800"
-                }`}
+                className={`mb-4 font-display text-3xl font-bold bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300`}
               >
                 Our Vision
               </h2>
@@ -165,7 +161,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
           >
             <h2 className="mb-6 font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl dark:text-slate-50">
               Our{" "}
-              <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
+              <span className="bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300">
                 Core Values
               </span>
             </h2>
@@ -193,9 +189,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
               >
                 <div className="text-5xl mb-4">{value.icon}</div>
                 <h3
-                  className={`mb-3 font-display text-xl font-bold ${
-                    isDark ? "text-cyan-200" : "text-teal-800"
-                  }`}
+                  className={`mb-3 font-display text-xl font-bold bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300`}
                 >
                   {value.title}
                 </h3>
@@ -218,9 +212,9 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-6 font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl dark:text-slate-50">
+            <h2 className="mb-6 font-display text-4xl tracking-tight text-slate-600 md:text-5xl lg:text-6xl dark:text-slate-50 font-bold">
               Meet Our{" "}
-              <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
+              <span className="bg-linear-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
                 Team
               </span>
             </h2>
@@ -283,7 +277,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
           >
             <h2 className="mb-8 font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl dark:text-slate-50">
               Our{" "}
-              <span className="bg-gradient-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
+              <span className="bg-linear-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300">
                 Story
               </span>
             </h2>
@@ -320,8 +314,8 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
       <section
         className={`relative overflow-hidden py-16 md:py-24 lg:py-32 ${
           isDark
-            ? "border-y border-white/10 bg-gradient-to-r from-slate-950 via-violet-950/35 to-slate-950"
-            : "border-y border-slate-200/70 bg-gradient-to-r from-teal-50/95 via-white to-indigo-50/90"
+            ? "border-y border-white/10 bg-linear-to-r from-slate-950 via-violet-950/35 to-slate-950"
+            : "border-y border-slate-200/70 bg-linear-to-r from-teal-50/95 via-white to-indigo-50/90"
         }`}
       >
         <div
@@ -343,7 +337,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-6 font-display text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl dark:text-slate-50">
+            <h2 className="mb-6 font-display text-4xl font-bold tracking-tight bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300">
               Ready to Work With Us?
             </h2>
             <p
