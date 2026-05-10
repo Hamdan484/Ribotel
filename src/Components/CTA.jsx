@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
 import { MotionLink } from "../Common/MotionLink";
 
-
 export default function CTA() {
   const { isDark } = useTheme();
 

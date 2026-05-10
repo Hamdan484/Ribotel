@@ -140,13 +140,13 @@ export default function PortfolioSection() {
             <motion.button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`rounded-full px-6 py-2 font-medium transition-all ${
+              className={`rounded-full px-6 py-2 font-medium transition-all   ${
                 selectedCategory === cat.id
                   ? "bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 text-white shadow-lg shadow-teal-500/20 dark:from-cyan-500 dark:via-sky-500 dark:to-violet-600 dark:shadow-cyan-500/25"
                   : isDark
                     ? "border border-white/10 bg-slate-900/70 text-slate-300 hover:bg-slate-800/80"
                     : "border border-slate-200 bg-white/80 text-slate-700 hover:bg-slate-50"
-              }`}
+              }`} 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -187,8 +187,7 @@ export default function PortfolioSection() {
                 {/* Project Info */}
                 <div className="p-8">
                   <div
-                    className={`mb-3 text-sm font-semibold ${
-                      isDark ? "text-cyan-300" : "text-teal-700"
+                    className={`mb-3 text-sm font-semibold  text-teal-700
                     }`}
                   >
                     {categories.find((c) => c.id === project.category)?.name}
@@ -212,12 +211,13 @@ export default function PortfolioSection() {
                     }`}
                     whileHover={{ x: 5 }}
                   >
-                    <span> <a href={project.link} target="_blank" rel="noopener noreferrer font-semibold tracking-tight bg-linear-to-b from-orange-500 to-black bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300">View Project</a></span>
+                    <span> <a href={project.link} target="_blank" rel="noopener noreferrer" className="font-semibold tracking-tight bg-linear-to-b from-orange-500 to-black bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300">View Project</a></span>
                     <svg
                       className="w-4 h-4 group-hover/link:translate-x-1 transition-transform"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                    
                     >
                       <path
                         strokeLinecap="round"
@@ -248,7 +248,7 @@ export default function PortfolioSection() {
           </motion.div>
         )}
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA 
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0 }}
@@ -270,6 +270,7 @@ export default function PortfolioSection() {
             View All Projects
           </motion.span>
         </motion.div>
+        */}
       </div>
     </section>
   );

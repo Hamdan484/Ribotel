@@ -68,6 +68,7 @@ export default function ContactSection() {
       title: "Working Hours",
       value: "Mon - Fri | 9AM - 5PM",
       link: "#",
+      
     },
   ];
 
@@ -107,7 +108,7 @@ export default function ContactSection() {
             }`}
           >
             Have a project in mind? Need IT solutions or consulting?
-            Let’s discuss how we can help your business grow.
+            Let's discuss how we can help your business grow.
           </p>
         </motion.div>
 
@@ -137,7 +138,7 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-slate-400"
                 />
 
                 <input
@@ -147,7 +148,7 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-slate-400"
                 />
               </div>
 
@@ -159,7 +160,7 @@ export default function ContactSection() {
                   placeholder="Phone Number"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-slate-400"
                 />
 
                 <input
@@ -169,7 +170,7 @@ export default function ContactSection() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-slate-400"
                 />
               </div>
 
@@ -181,7 +182,7 @@ export default function ContactSection() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-teal-500 placeholder:text-slate-400"
               />
 
               {/* Button */}
@@ -226,10 +227,10 @@ export default function ContactSection() {
                 }`}
               >
                 <div className="flex items-center gap-4">
-                  <div className="text-3xl">{item.icon}</div>
+                  <div className="text-3xl text-slate-400">{item.icon}</div>
 
                   <div>
-                    <h3 className="font-bold">{item.title}</h3>
+                    <h3 className="font-bold text-slate-400">{item.title}</h3>
                     <p
                       className={
                         isDark ? "text-slate-400" : "text-slate-600"
@@ -248,11 +249,11 @@ export default function ContactSection() {
             <div
               className={`rounded-3xl p-8 ${
                 isDark
-                  ? "border border-white/10 bg-gradient-to-r from-cyan-500/10 to-violet-500/10"
-                  : "border border-slate-200 bg-gradient-to-r from-teal-50 to-indigo-50"
+                  ? "border border-white/10 bg-linear-to-r from-cyan-500/10 to-violet-500/10"
+                  : "border border-slate-200 bg-linear-to-r from-teal-50 to-indigo-50"
               }`}
             >
-              <h3 className="text-2xl font-bold">
+              <h3 className={`text-2xl font-bold ${isDark ? 'text-emerald-600' : 'text-teal-700'}`}>
                 Need urgent assistance?
               </h3>
 
@@ -265,8 +266,10 @@ export default function ContactSection() {
                 For urgent matters, call us directly.
               </p>
 
-              <button className="btn-gradient mt-5 rounded-xl px-6 py-3">
-                Call Now
+              <button className="btn-gradient mt-5 rounded-xl px-6 py-3 ">
+                <a href="https://wa.me/233597788861" target="_blank" rel="noopener noreferrer">
+  <button>Chat on WhatsApp</button>
+</a>
               </button>
             </div>
           </motion.div>

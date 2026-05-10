@@ -120,9 +120,7 @@ export default function ServicesSection() {
 
                 {/* Content */}
                 <h3
-                  className={`mb-4 font-display text-2xl font-bold ${
-                    isDark ? "text-cyan-200" : "text-teal-800"
-                  }`}
+                  className={`mb-4 font-display text-2xl font-bold  text-teal-800`}
                 >
                   {service.title}
                 </h3>
@@ -135,11 +133,17 @@ export default function ServicesSection() {
                 {/* Learn More Link */}
                 <motion.div
                   className={`group/link inline-flex items-center gap-2 font-semibold ${
-                    isDark ? "text-cyan-300" : "text-teal-700"
+                    isDark ? "text-cyan-500" : "text-teal-700"
                   }`}
                   whileHover={{ x: 5 }}
                 >
-                  <span>Learn More</span>
+                  <MotionLink
+            to="/portfolio"
+            
+          >
+                  <span className="text-teal-500">
+                    
+                    Learn More</span></MotionLink>
                   <svg
                     className="w-5 h-5 group-hover/link:translate-x-2 transition-transform"
                     fill="none"
@@ -151,6 +155,7 @@ export default function ServicesSection() {
                       strokeLinejoin="round"
                       strokeWidth={2}
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
+
                     />
                   </svg>
                 </motion.div>
@@ -159,7 +164,7 @@ export default function ServicesSection() {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA 
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0 }}
@@ -180,6 +185,7 @@ export default function ServicesSection() {
             View All Services
           </motion.span>
         </motion.div>
+        */}
       </div>
     </section>
   );

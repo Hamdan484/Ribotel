@@ -33,8 +33,8 @@ export default function AboutSection() {
 
   const team = [
     {
-      name: "Simon Akaribo",
-      role: "Founder & CEO",
+      name: "Hamdan Ibrahim",
+      role: "Frontend developer",
       emoji: "👨‍💼",
       bio: "Tech visionary with passion for digital transformation and community empowerment.",
     },

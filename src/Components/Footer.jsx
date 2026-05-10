@@ -68,7 +68,7 @@ export default function Footer() {
               <h3
                 className={`mb-2 text-2xl font-bold md:text-3xl ${
                   isDark
-                    ? "bg-gradient-to-r from-cyan-200 to-violet-300 bg-clip-text text-transparent"
+                    ? "bg-linear-to-r from-cyan-200 to-violet-300 bg-clip-text text-transparent"
                     : "text-teal-800"
                 }`}
               >
