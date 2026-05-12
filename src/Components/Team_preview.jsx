@@ -6,28 +6,28 @@ export default function TeamPreview() {
 
   const team = [
     {
-      id: 1,
+      id: "simon",
       name: "Simon",
       role: "Founder & CEO",
       emoji: "👨‍💼",
       bio: "Tech visionary with passion for digital transformation and community empowerment.",
     },
     {
-      id: 2,
+      id: "ebenezer",
       name: "Ebenezer",
       role: "Full-Stack Developer",
       emoji: "👩‍💻",
       bio: "Full-stack expert with expertise in building scalable web solutions.",
     },
     {
-      id: 3,
+      id: "hamdan",
       name: "Hamdan",
       role: "Frontend Developer",
       emoji: "👩‍💻",
       bio: "Creative frontend developer passionate about building intuitive user experiences.",
     },
     {
-      id: 4,
+      id: "solomon",
       name: "Solomon",
       role: "Graphic Designer",
       emoji: "👨‍🎨",
@@ -75,43 +75,51 @@ export default function TeamPreview() {
 
         {/* Team Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {team.map((member) => (
-            <motion.div
+          {team.map((member, idx) => (
+            <motion.article
               key={member.id}
               variants={memberVariants}
-              whileHover="hover"
-              className="glass-panel p-8 text-center transition-all hover:border-teal-300/60 dark:hover:border-cyan-400/50"
+              whileHover={{ y: -8 }}
+              transition={{ duration: 0.25 }}
+              className="text-center"
             >
-              {/* Avatar */}
-              <div className="text-6xl mb-4">{member.emoji}</div>
-
-              {/* Name */}
-              <h3
-                className={`mb-2 text-xl font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}
+              <motion.div
+                className="glass-panel p-6 sm:p-7 h-full"
+                whileHover={{ boxShadow: "0 20px 60px -30px rgba(20,184,166,0.45)" }}
               >
-                {member.name}
-              </h3>
+                {/* Avatar */}
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50/70 text-3xl text-teal-700 ring-1 ring-teal-200/60 dark:bg-cyan-400/10 dark:text-cyan-200 dark:ring-cyan-300/20">
+                  <span aria-hidden="true">{member.emoji}</span>
+                </div>
 
-              {/* Role */}
-              <div
-                className={`mb-3 text-sm bg-linear-to-r from-teal-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:to-violet-300`}
-              >
-                {member.role}
-              </div>
+                {/* Name */}
+                <h3 className="mb-2 font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-cyan-200">
+                  {member.name}
+                </h3>
 
-              {/* Bio */}
-              <p
-                className={`text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
-              >
-                {member.bio}
-              </p>
-            </motion.div>
+                {/* Role */}
+                <div className="mb-3 text-sm font-medium bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300">
+                  {member.role}
+                </div>
+
+                {/* Bio */}
+                <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  {member.bio}
+                </p>
+
+                {/* subtle index glow (keeps card lively without affecting layout) */}
+                <div
+                  className="pointer-events-none mx-auto mt-5 h-1.5 w-16 rounded-full bg-linear-to-r from-teal-500/40 to-indigo-500/30"
+                  style={{ opacity: 0.45 + (idx % 4) * 0.05 }}
+                />
+              </motion.div>
+            </motion.article>
           ))}
         </motion.div>
       </div>

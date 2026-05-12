@@ -6,9 +6,38 @@ import About from "../Components/About";
 import PortfolioPreview from "../Components/Portfolio_preview";
 import TeamPreview from "../Components/Team_preview";
 import CTA from "../Components/CTA";
+import { Target,Zap, Sprout, Lightbulb} from "lucide-react";
 
 export default function Home() {
   const { isDark } = useTheme();
+
+  const whyChooseUsItems = [
+    {
+      id: "fast-reliable",
+      icon: <Zap size={28} />,
+      title: "Fast & Reliable",
+      description: "Quick turnaround with consistent quality and reliability.",
+    },
+    {
+      id: "goal-oriented",
+      icon: <Target size={28} />,
+      title: "Goal-Oriented",
+      description:
+        "Focused on achieving your business objectives and KPIs.",
+    },
+    {
+      id: "growth-focused",
+      icon: <Sprout size={28} />,
+      title: "Growth Focused",
+      description: "Solutions designed to scale with your business growth.",
+    },
+    {
+      id: "innovative",
+      icon: <Lightbulb size={28} />,
+      title: "Innovative",
+      description: "Always exploring new technologies and methodologies.",
+    },
+  ];
 
   return (
     <div className="overflow-hidden">
@@ -51,58 +80,34 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: "⚡",
-                title: "Fast & Reliable",
-                description:
-                  "Quick turnaround with consistent quality and reliability.",
-              },
-              {
-                icon: "🎯",
-                title: "Goal-Oriented",
-                description:
-                  "Focused on achieving your business objectives and KPIs.",
-              },
-              {
-                icon: "🌱",
-                title: "Growth Focused",
-                description:
-                  "Solutions designed to scale with your business growth.",
-              },
-              {
-                icon: "💡",
-                title: "Innovative",
-                description:
-                  "Always exploring new technologies and methodologies.",
-              },
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {whyChooseUsItems.map((item, idx) => (
+              <motion.article
+                key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
+                transition={{ delay: idx * 0.1, duration: 0.55, ease: "easeOut" }}
                 viewport={{ once: true }}
                 className="text-center"
               >
                 <motion.div
-                  className="text-5xl mb-4"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  className="glass-panel p-6 sm:p-7 h-full"
+                  whileHover={{ y: -6, boxShadow: "0 20px 50px -20px rgba(16, 185, 129, 0.35)" }}
+                  transition={{ duration: 0.25 }}
                 >
-                  {item.icon}
+                  <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-50/70 text-3xl text-teal-700 ring-1 ring-teal-200/60 dark:bg-cyan-400/10 dark:text-cyan-200 dark:ring-cyan-300/20">
+                    {item.icon}
+                  </div>
+
+                  <h3 className="mb-3 font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-cyan-200">
+                    {item.title}
+                  </h3>
+
+                  <p className={isDark ? "text-slate-300/90" : "text-slate-600"}>
+                    {item.description}
+                  </p>
                 </motion.div>
-                <h3
-                  className={`mb-3 font-display text-xl font-bold ${
-                    isDark ? "text-cyan-200" : "text-teal-800"
-                  }`}
-                >
-                  {item.title}
-                </h3>
-                <p className={isDark ? "text-slate-400" : "text-slate-600"}>
-                  {item.description}
-                </p>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
