@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
-import { MotionLink } from "../Common/MotionLink";
+
 import Chinova_image from "../assets/Images/Chinova.png";
 import Academic_writing_image from "../assets/Images/Academic_writing.png";
 import Data_analytics_image from "../assets/Images/Data_analytics.png";

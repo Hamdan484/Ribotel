@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
 
+
 export default function About() {
   const { isDark } = useTheme();
 
@@ -52,7 +53,7 @@ export default function About() {
 
   return (
     <section className="section-band">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -143,9 +144,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
                 >
                   {value.title}
                 </h4>
-                <p
-                  className={`text-sm "text-slate-600`}
-                >
+                <p className="text-sm text-slate-600 dark:text-slate-300">
                   {value.description}
                 </p>
               </motion.div>

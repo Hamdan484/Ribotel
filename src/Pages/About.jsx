@@ -1,30 +1,31 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
 import { MotionLink } from "../Common/MotionLink";
+import { Target, Lightbulb, Handshake, Globe } from "lucide-react";
 
 export default function AboutSection() {
   const { isDark } = useTheme();
 
   const values = [
     {
-      icon: "🎯",
+      icon: <Target size={28} />,
       title: "Innovation",
       description:
         "We stay ahead of technology trends to deliver cutting-edge solutions.",
     },
     {
-      icon: "🤝",
+      icon: <Handshake size={28} />,
       title: "Collaboration",
       description:
         "We work closely with clients to understand and exceed their needs.",
     },
     {
-      icon: "⚡",
+      icon: <Lightbulb size={28} />,
       title: "Excellence",
       description: "We maintain the highest standards in everything we do.",
     },
     {
-      icon: "🌍",
+      icon: <Globe size={28} />,
       title: "Impact",
       description:
         "We create solutions that make a real difference in communities.",
@@ -62,17 +63,22 @@ export default function AboutSection() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 },
     },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
     <div className="overflow-hidden">
+
       {/* Hero Section */}
       <section className="section-band">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -187,7 +193,9 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
                 className="glass-panel p-8 text-center transition-all hover:border-teal-300/60 dark:hover:border-cyan-400/50"
                 whileHover={{ y: -5 }}
               >
-                <div className="text-5xl mb-4">{value.icon}</div>
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-50/70 text-3xl text-teal-700 ring-1 ring-teal-200/60 dark:bg-cyan-400/10 dark:text-cyan-200 dark:ring-cyan-300/20">
+                  {value.icon}
+                </div>
                 <h3
                   className={`mb-3 font-display text-xl font-bold bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300`}
                 >
