@@ -47,7 +47,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-32 lg:px-8">
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col px-4 py-20 sm:px-6 md:py-32 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           
           {/* Left Content */}
@@ -133,7 +133,7 @@ export default function HeroSection() {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col gap-4 pt-4 sm:flex-row"
+              className="flex flex-col gap-4 pt-4 sm:flex-row sm:items-center"
             >
               <MotionLink
                 to="/contact"
@@ -185,7 +185,7 @@ export default function HeroSection() {
                 <img 
                   src={HERO_IMAGE}
                   alt="Futuristic digital innovation"
-                  className="hidden md:block aspect-4/3 w-full object-cover object-center md:aspect-5/4 lg:aspect-auto lg:max-h-[min(560px,78vh)] lg:min-h-95"
+                  className="hidden md:block aspect-[4/3] w-full object-cover object-center md:aspect-[5/4] lg:aspect-auto lg:max-h-[min(560px,78vh)] lg:min-h-0"
                   width={1200}
                   height={900}
                   loading="eager"
