@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
 import { MotionLink } from "../Common/MotionLink";
+import { ChartLine, Code ,Handshake, BookCheck} from "lucide-react";
 
 export default function ServicesSection() {
   const { isDark } = useTheme();
@@ -8,9 +9,7 @@ export default function ServicesSection() {
   const services = [
     {
       id: 1,
-      icon: (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
-</svg>
+      icon: (<ChartLine size={32} />
 ),
       title: "Data Analytics",
       description:
@@ -19,7 +18,7 @@ export default function ServicesSection() {
     },
     {
       id: 2,
-      icon: "💻",
+      icon: (<Code size={32} />),
       title: "Web Development",
       description:
         "Custom web solutions built with modern technology and best practices.",
@@ -27,7 +26,7 @@ export default function ServicesSection() {
     },
     {
       id: 3,
-      icon: "🤝",
+      icon: (<Handshake size={32} />),
       title: "IT Consultancy",
       description:
         "Expert guidance to align your IT strategy with business objectives.",
@@ -35,8 +34,8 @@ export default function ServicesSection() {
     },
     {
       id: 4,
-      icon: (<ion-icon name="book-outline"></ion-icon>),
-      title: " Academic Writing",
+      icon: (<BookCheck size={32} />),
+      title: "Academic Writing",
       description:
         "Helping students and researchers excel with expert academic writing and research support services.",
     },
@@ -111,7 +110,7 @@ export default function ServicesSection() {
               >
                 {/* Icon */}
                 <motion.div
-                  className={`w-16 h-16 rounded-xl bg-linear-to-br ${service.color} flex items-center justify-center text-4xl mb-6 shadow-lg group-hover:shadow-xl transition-shadow`}
+                  className={`w-16 h-16 rounded-xl flex items-center justify-center text-4xl mb-6 shadow-lg group-hover:shadow-xl transition-shadow`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
