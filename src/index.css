@@ -2,6 +2,46 @@
 
 :root {
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Theme tokens (Light) */
+  --bg: #fff7f7; /* slate-50-ish */
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-2: rgba(248, 250, 252, 0.78);
+  --text: #0f172a; /* slate-900 */
+  --text-muted: #475569; /* slate-600 */
+  --border: rgba(148, 163, 184, 0.45); /* slate-400 */
+  --ring: rgba(20, 184, 166, 0.45); /* teal */
+
+  --card-bg: rgba(255, 255, 255, 0.82);
+  --card-border: rgba(52, 59, 69, 0.877);
+
+  --btn-primary-bg: linear-gradient(90deg, #0d9488 0%, #0891b2 45%, #4f46e5 100%);
+  --btn-primary-text: #ffffff;
+
+  --btn-outline-border: rgba(13, 148, 136, 0.7);
+  --btn-outline-text: #0f766e;
+  --btn-ghost-text: #0f766e;
+}
+
+.dark {
+  /* Theme tokens (Dark) */
+  --bg: #020308;
+  --surface: rgba(2, 6, 23, 0.55); /* deep slate-ish */
+  --surface-2: rgba(15, 23, 42, 0.55);
+  --text: #e2e8f0; /* slate-200 */
+  --text-muted: #94a3b8; /* slate-400 */
+  --border: rgba(226, 232, 240, 0.12);
+  --ring: rgba(34, 211, 238, 0.45); /* cyan */
+
+  --card-bg: rgba(2, 6, 23, 0.45);
+  --card-border: rgba(226, 232, 240, 0.12);
+
+  --btn-primary-bg: linear-gradient(90deg, #06b6d4 0%, #0ea5e9 45%, #8b5cf6 100%);
+  --btn-primary-text: #ffffff;
+
+  --btn-outline-border: rgba(34, 211, 238, 0.7);
+  --btn-outline-text: #67e8f9;
+  --btn-ghost-text: #67e8f9;
 }
 
 @layer base {
@@ -9,15 +49,32 @@
     @apply antialiased scroll-smooth;
   }
   body {
-    @apply font-sans text-slate-800 dark:text-slate-200;
+    @apply font-sans;
+    background: var(--bg);
+    color: var(--text);
+    transition: background-color 260ms ease, color 260ms ease;
   }
+
+
+  /* Typography normalization */
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight;
+  }
+
+
+
+  p {
+    @apply leading-relaxed;
+  }
+
   .font-display {
     font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
   }
-  ::selection {
+::selection {
     @apply bg-cyan-500/25 dark:bg-violet-500/30 text-slate-900 dark:text-white;
   }
 }
+
 
 /* Light: soft professional atmosphere */
 .app-bg-light {
@@ -40,6 +97,7 @@
 
 /* Nebula / distant glow — dark only */
 .cosmic-nebula {
+
   background:
     radial-gradient(ellipse 85% 55% at 50% 115%, rgba(88, 28, 135, 0.45), transparent 58%),
     radial-gradient(ellipse 50% 35% at 15% 25%, rgba(14, 165, 233, 0.14), transparent 52%),
@@ -145,8 +203,10 @@
 
 @layer components {
   .section-band {
-  @apply py-16 md:py-24 lg:py-32 border-y border-slate-200/60 dark:border-white/[0.07] bg-transparent;
-}
+
+    @apply py-16 md:py-24 lg:py-32 border-y border-slate-200/60 dark:border-white/[0.07] bg-transparent;
+  }
+
 
   .glass-panel {
     @apply rounded-2xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-slate-950/50 backdrop-blur-xl shadow-[0_8px_40px_-16px_rgba(15,23,42,0.2)] dark:shadow-[0_8px_50px_-20px_rgba(56,189,248,0.12)];
@@ -160,3 +220,25 @@
     @apply rounded-xl border-2 border-teal-600/80 text-teal-700 dark:border-cyan-400/70 dark:text-cyan-200 bg-white/50 dark:bg-transparent hover:bg-teal-50 dark:hover:bg-cyan-400/10 transition-colors duration-300 font-semibold;
   }
 }
+
+/* Token utilities */
+@layer utilities {
+  .theme-bg { background-color: var(--bg); }
+  .theme-surface { background-color: var(--surface); }
+  .theme-surface-2 { background-color: var(--surface-2); }
+  .theme-text { color: var(--text); }
+  .theme-muted { color: var(--text-muted); }
+  .theme-border { border-color: var(--border); }
+.theme-ring { --tw-ring-color: var(--ring); }
+  .theme-card { background-color: var(--card-bg); border-color: var(--card-border); }
+  .theme-btn-primary {
+    background-image: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+  }
+  .theme-btn-outline {
+    border-color: var(--btn-outline-border);
+    color: var(--btn-outline-text);
+  }
+
+}
+

@@ -13,7 +13,8 @@ export default function Card({
     <motion.div
       className={`glass-panel rounded-2xl transition-all ${className} ${
         hover ? "cursor-pointer" : ""
-      }`}
+      } theme-card`}
+
       whileHover={
         hover
           ? {

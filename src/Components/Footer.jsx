@@ -45,18 +45,12 @@ export default function Footer() {
 
   return (
     <footer
-      className={`transition-colors duration-300 ${
-        isDark
-          ? "border-t border-white/10 bg-linear-to-b from-slate-950/95 to-[#020308] text-white"
-          : "border-t border-slate-200/80 bg-linear-to-b from-white/90 to-slate-50/95 text-slate-900"
-      }`}
+      className="transition-colors duration-300 border-t theme-border"
     >
+
       <motion.div
-        className={`py-12 md:py-16 ${
-          isDark
-            ? "border-b border-white/5 bg-linear-to-r from-slate-950/80 via-violet-950/20 to-slate-950/80"
-            : "border-b border-slate-200/60 bg-linear-to-r from-teal-50/90 via-white to-indigo-50/80"
-        }`}
+        className="py-12 md:py-16 border-b theme-border theme-surface-2"
+
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -66,19 +60,15 @@ export default function Footer() {
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div>
               <h3
-                className={`mb-2 text-2xl font-bold md:text-3xl ${
-                  isDark
-                    ? "bg-linear-to-r from-cyan-200 to-violet-300 bg-clip-text text-transparent"
-                    : "text-teal-800"
-                }`}
+                className="mb-2 text-2xl font-bold md:text-3xl bg-linear-to-r from-teal-800 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-200 dark:to-violet-300"
               >
+
                 Stay Updated
               </h3>
               <p
-                className={
-                  isDark ? "text-slate-400" : "text-slate-600"
-                }
+                className="theme-muted"
               >
+
                 Get the latest news and updates about our services and projects.
               </p>
             </div>
@@ -86,11 +76,8 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className={`flex-1 rounded-xl px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500 dark:focus:ring-cyan-400 ${
-                  isDark
-                    ? "border border-white/10 bg-slate-900/80 text-white placeholder-slate-500"
-                    : "border border-slate-200 bg-white text-slate-900 placeholder-slate-400"
-                }`}
+                className="flex-1 rounded-xl px-4 py-3 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500 theme-border bg-white/60 dark:bg-slate-950/60 theme-text"
+
               />
               <button
                 type="submit"

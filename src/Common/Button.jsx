@@ -13,12 +13,10 @@ export default function Button({
   const variants = {
     primary: "btn-gradient",
     secondary: "btn-outline-themed",
-    outline: isDark
-      ? "border-2 border-white/20 text-slate-200 hover:border-cyan-400/60 hover:text-cyan-200"
-      : "border-2 border-slate-300 text-slate-700 hover:border-teal-600 hover:text-teal-800",
-    ghost: isDark
-      ? "text-cyan-200 hover:bg-cyan-400/10"
-      : "text-teal-700 hover:bg-teal-50",
+    outline:
+      "border-2 theme-border theme-btn-outline hover:opacity-95 transition-colors",
+    ghost:
+      "hover:bg-teal-50/70 dark:hover:bg-cyan-400/10 hover:opacity-95 transition-colors",
   };
 
   const sizes = {
