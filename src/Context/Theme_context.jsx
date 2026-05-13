@@ -3,13 +3,14 @@ import { createContext, useState, useContext, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-
-    
-    isDark      ? document.documentElement.classList.add('dark')
-      : document.documentElement.classList.remove('dark');
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [isDark]);
 
   const toggleTheme = () => setIsDark(!isDark);

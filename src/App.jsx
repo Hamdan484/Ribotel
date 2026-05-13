@@ -15,7 +15,8 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <CosmicBackground />
-        <div className="relative flex min-h-screen flex-col text-slate-800 bg-blue-500/20">
+        <div className="relative flex min-h-screen flex-col theme-bg theme-text transition-colors duration-300">
+
           <Navbar />
 
           <main className="grow pt-16 md:pt-20">
