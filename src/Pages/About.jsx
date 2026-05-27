@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
 import { MotionLink } from "../Common/MotionLink";
-import { Target, Lightbulb, Handshake, Globe } from "lucide-react";
+import { Target, Lightbulb, Handshake, Globe, LightbulbIcon } from "lucide-react";
 
 export default function AboutSection() {
   const { isDark } = useTheme();
@@ -118,7 +118,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
               viewport={{ once: true }}
               className="glass-panel p-8"
             >
-              <div className="text-5xl mb-4">🎯</div>
+              <div className="text-5xl mb-4"><Target size={58} /></div>
               <h2
                 className={`mb-4 font-display text-3xl font-bold bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300`}
               >
@@ -139,7 +139,7 @@ Our vision is to lead in tech innovation that transforms industries, empowers Af
               viewport={{ once: true }}
               className="glass-panel p-8"
             >
-              <div className="text-5xl mb-4">🌟</div>
+              <div className="text-5xl mb-4"><LightbulbIcon size={58}/></div>
               <h2
                 className={`mb-4 font-display text-3xl font-bold bg-linear-to-r from-teal-600 via-cyan-600 to-indigo-600 bg-clip-text text-transparent dark:from-cyan-300 dark:via-sky-300 dark:to-violet-300`}
               >
