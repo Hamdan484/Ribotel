@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
-
+import {Mail,Phone,Globe, Clock} from "lucide-react"
 export default function ContactSection() {
   const { isDark } = useTheme();
 
@@ -46,25 +46,25 @@ export default function ContactSection() {
 
   const contactInfo = [
     {
-      icon: "📧",
+      icon: <Mail size={28} color={isDark ? "#4FD1C5" : "#319795"} />,
       title: "Email",
       value: "info@ribotel.com",
       link: "mailto:info@ribotel.com",
     },
     {
-      icon: (<ion-icon name="call-outline"></ion-icon>),
+      icon: <Phone size={28} color={isDark ? "#4FD1C5" : "#319795"}/>,
       title: "Phone",
       value: "+233 534 819 667",
       link: "tel:+233534819667",
     },
     {
-      icon: (<ion-icon name="location-outline"></ion-icon>),
+      icon: <Globe size={28} color={isDark ? "#4FD1C5" : "#319795"} />,
       title: "Location",
       value: "Kumasi, Ghana",
       link: "#",
     },
     {
-      icon: "🕐",
+      icon: <Clock size={28} color={isDark ? "#4FD1C5" : "#319795"} />,
       title: "Working Hours",
       value: "Mon - Fri | 9AM - 5PM",
       link: "#",

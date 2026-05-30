@@ -1,39 +1,15 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
+import {teamImages} from "../teamImages";
+
 
 export default function TeamPreview() {
   const { isDark } = useTheme();
 
   const team = [
-    {
-      id: "simon",
-      name: "Simon",
-      role: "Founder & CEO",
-      emoji: "👨‍💼",
-      bio: "Tech visionary with passion for digital transformation and community empowerment.",
-    },
-    {
-      id: "ebenezer",
-      name: "Ebenezer",
-      role: "Full-Stack Developer",
-      emoji: "👩‍💻",
-      bio: "Full-stack expert with expertise in building scalable web solutions.",
-    },
-    {
-      id: "hamdan",
-      name: "Hamdan",
-      role: "Frontend Developer",
-      emoji: "👩‍💻",
-      bio: "Creative frontend developer passionate about building intuitive user experiences.",
-    },
-    {
-      id: "solomon",
-      name: "Solomon",
-      role: "Graphic Designer",
-      emoji: "👨‍🎨",
-      bio: "Graphic designer with a knack for creating visually stunning and impactful designs.",
-    },
+    ...teamImages
   ];
+   
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -94,12 +70,16 @@ export default function TeamPreview() {
                 whileHover={{ boxShadow: "0 20px 60px -30px rgba(20,184,166,0.45)" }}
               >
                 {/* Avatar */}
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-teal-50/70 text-3xl text-teal-700 ring-1 ring-teal-200/60 dark:bg-cyan-400/10 dark:text-cyan-200 dark:ring-cyan-300/20">
-                  <span aria-hidden="true">{member.emoji}</span>
+                <div className="mx-auto mb-4 flex h-24 w-24 sm:h-28 sm:w-28 md:h-36 md:w-36 lg:h-44 lg:w-44 xl:h-48 xl:w-48 items-center justify-center rounded-full bg-teal-50/70 text-3xl text-teal-700 ring-1 ring-teal-200/60 dark:bg-cyan-400/10 dark:text-cyan-200 dark:ring-cyan-300/20">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="h-full w-full rounded-full object-cover"
+                  />
                 </div>
 
                 {/* Name */}
-                <h3 className="mb-2 font-display text-lg sm:text-xl font-bold text-slate-900 dark:text-cyan-200">
+                <h3 className="mb-1 font-display text-4xl sm:text-2xl font-bold text-slate-900 dark:text-cyan-200">
                   {member.name}
                 </h3>
 
