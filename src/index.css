@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #121358;
+  --color-secondary: #232F72;
+  --color-tertiary: #2F578A;
+  --color-other: #36ADA3;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* Theme tokens (Light) */
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --text: #121358; /* primary (navy) as text color */
+  --text-muted: #2f578a; /* tertiary as muted text */
+  --border: rgba(47, 87, 138, 0.2); /* tertiary border */
+  --ring: rgba(54, 173, 163, 0.4); /* other */
+
+  --card-bg: #ffffff;
+  --card-border: rgba(35, 47, 114, 0.15);
+
+  --btn-primary-bg: #232F72;
+  --btn-primary-text: #ffffff;
+
+  --btn-outline-border: #232F72;
+  --btn-outline-text: #232F72;
+  --btn-ghost-text: #232F72;
+
+  --grid-color: rgba(35, 47, 114, 0.04);
+  --dot-color: rgba(35, 47, 114, 0.08);
+}
+
+.dark {
+  /* Theme tokens (Dark) */
+  --bg: #07081c; /* very dark navy */
+  --surface: #121358; /* dark navy surface */
+  --surface-2: #232F72;
+  --text: #f8fafc; /* light slate */
+  --text-muted: #9ab3d4; /* light steel blue */
+  --border: rgba(47, 87, 138, 0.35);
+  --ring: rgba(54, 173, 163, 0.6); /* other */
+
+  --card-bg: #121358;
+  --card-border: rgba(47, 87, 138, 0.35);
+
+  --btn-primary-bg: #36ADA3;
+  --btn-primary-text: #ffffff;
+
+  --btn-outline-border: #36ADA3;
+  --btn-outline-text: #36ADA3;
+  --btn-ghost-text: #36ADA3;
+
+  --grid-color: rgba(54, 173, 163, 0.03);
+  --dot-color: rgba(54, 173, 163, 0.07);
+}
+
+
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+  }
+  body {
+    @apply font-sans;
+    background: var(--bg);
+    color: var(--text);
+    transition: background-color 260ms ease, color 260ms ease;
+  }
+
+
+  /* Typography normalization */
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight;
+  }
+
+
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  .font-display {
+    font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  }
+::selection {
+    @apply bg-other/25 dark:bg-tertiary/30 text-slate-900 dark:text-white;
+  }
+}
+
+
+/* Light: soft professional atmosphere */
+.app-bg-light {
+  background:
+    radial-gradient(ellipse 110% 90% at 50% -25%, #e0e7ff 0%, transparent 52%),
+    radial-gradient(ellipse 70% 55% at 100% 0%, #ccfbf1 0%, transparent 48%),
+    radial-gradient(ellipse 55% 45% at 0% 85%, #fae8ff 0%, transparent 42%),
+    linear-gradient(165deg, #f8fafc 0%, #f1f5f9 38%, #ecfeff 100%);
+}
+
+/* Dark: deep space base */
+.app-bg-space {
+  background: radial-gradient(
+    ellipse 130% 100% at 50% 100%,
+    #0c1222 0%,
+    #050814 42%,
+    #020308 100%
+  );
+}
+
+/* Nebula / distant glow — dark only */
+.cosmic-nebula {
+
+  background:
+    radial-gradient(ellipse 85% 55% at 50% 115%, rgba(88, 28, 135, 0.45), transparent 58%),
+    radial-gradient(ellipse 50% 35% at 15% 25%, rgba(14, 165, 233, 0.14), transparent 52%),
+    radial-gradient(ellipse 45% 30% at 88% 18%, rgba(99, 102, 241, 0.18), transparent 48%),
+    radial-gradient(ellipse 35% 25% at 70% 60%, rgba(6, 182, 212, 0.08), transparent 50%);
+  pointer-events: none;
+}
+
+/* Star fields — layered for depth */
+.cosmic-stars-a {
+  background-image:
+    radial-gradient(1.2px 1.2px at 8% 12%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(1px 1px at 22% 38%, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1.5px 1.5px at 41% 9%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 55% 72%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 1px at 73% 28%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.3px 1.3px at 91% 44%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 15% 68%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 33% 91%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.2px 1.2px at 62% 48%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1px 1px at 84% 8%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 5% 52%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1.4px 1.4px at 48% 22%, rgba(255, 255, 255, 0.88), transparent),
+    radial-gradient(1px 1px at 77% 81%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 95% 63%, rgba(255, 255, 255, 0.72), transparent),
+    radial-gradient(1px 1px at 28% 18%, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1.2px 1.2px at 59% 88%, rgba(255, 255, 255, 0.78), transparent);
+  background-size: 100% 100%;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
+.cosmic-stars-b {
+  background-image:
+    radial-gradient(1px 1px at 12% 45%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(1.2px 1.2px at 35% 62%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 51% 15%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 68% 55%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1.3px 1.3px at 88% 78%, rgba(255, 255, 255, 0.62), transparent),
+    radial-gradient(1px 1px at 19% 82%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 44% 33%, rgba(255, 255, 255, 0.58), transparent),
+    radial-gradient(1px 1px at 76% 12%, rgba(255, 255, 255, 0.52), transparent),
+    radial-gradient(1.1px 1.1px at 92% 36%, rgba(255, 255, 255, 0.68), transparent),
+    radial-gradient(1px 1px at 7% 28%, rgba(255, 255, 255, 0.48), transparent),
+    radial-gradient(1px 1px at 63% 92%, rgba(255, 255, 255, 0.55), transparent);
+  background-size: 115% 115%;
+  background-position: 40% 20%;
+  opacity: 0.55;
+  animation: star-drift 200s linear infinite;
+  pointer-events: none;
+}
+
+.cosmic-twinkle {
+  background-image:
+    radial-gradient(1.2px 1.2px at 25% 55%, rgba(200, 230, 255, 1), transparent),
+    radial-gradient(1px 1px at 66% 22%, rgba(255, 255, 255, 0.95), transparent),
+    radial-gradient(1px 1px at 82% 71%, rgba(220, 240, 255, 0.9), transparent),
+    radial-gradient(1.1px 1.1px at 40% 40%, rgba(255, 255, 255, 0.85), transparent);
+  background-size: 100% 100%;
+  animation: twinkle 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes star-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-3%, -2%, 0);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(28px, -42px) scale(1.08);
+  }
+  66% {
+    transform: translate(-18px, 18px) scale(0.94);
+  }
+}
+
+.animate-blob {
+  animation: blob-float 8s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@layer components {
+  .section-band {
+
+    @apply py-16 md:py-24 lg:py-32 border-y border-slate-200/60 dark:border-white/[0.07] bg-transparent;
+  }
+
+
+  .glass-panel {
+    @apply rounded-2xl border border-slate-200/50 dark:border-tertiary/20 bg-white dark:bg-[#121358]/30 shadow-sm transition-all duration-300;
+  }
+
+  .btn-gradient {
+    @apply rounded-xl bg-secondary dark:bg-other text-white font-semibold shadow-md shadow-other/15 transition-all duration-300 hover:bg-primary dark:hover:bg-other/90 hover:shadow-lg;
+  }
+
+  .btn-outline-themed {
+    @apply rounded-xl border-2 border-other/80 text-secondary dark:border-other/70 dark:text-other bg-white/50 dark:bg-transparent hover:bg-other/10 dark:hover:bg-other/10 transition-colors duration-300 font-semibold;
+  }
+}
+
+/* Token utilities */
+@layer utilities {
+  .theme-bg { background-color: var(--bg); }
+  .theme-surface { background-color: var(--surface); }
+  .theme-surface-2 { background-color: var(--surface-2); }
+  .theme-text { color: var(--text); }
+  .theme-muted { color: var(--text-muted); }
+  .theme-border { border-color: var(--border); }
+.theme-ring { --tw-ring-color: var(--ring); }
+  .theme-card { background-color: var(--card-bg); border-color: var(--card-border); }
+  .theme-btn-primary {
+    background-image: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+  }
+  .theme-btn-outline {
+    border-color: var(--btn-outline-border);
+    color: var(--btn-outline-text);
+  }
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .bg-dot-pattern {
+    background-image: radial-gradient(var(--dot-color) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+}
+
