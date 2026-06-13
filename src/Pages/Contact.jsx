@@ -2,9 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
 import { Mail, Phone, Globe, Clock, ArrowRight } from "lucide-react";
+import { toast } from "sonner";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
   const { isDark } = useTheme();
+
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -14,8 +18,6 @@ export default function ContactSection() {
     message: "",
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -24,22 +26,41 @@ export default function ContactSection() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
-
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3000);
+    setLoading(true);
+    try {
+      await toast.promise(
+        emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        ),
+        {
+          loading: "Sending your message...",
+          success: "Message sent successfully! We'll get back to you soon.",
+          error: "Failed to send message. Please try again later.",
+        },
+      );
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -78,7 +99,6 @@ export default function ContactSection() {
   return (
     <section className="section-band py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        
         {/* Header */}
         <motion.div
           className="mb-16 text-center space-y-4"
@@ -92,18 +112,18 @@ export default function ContactSection() {
           </span>
 
           <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-primary dark:text-slate-100">
-            Contact <span className="text-secondary dark:text-other">Us Today</span>
+            Contact{" "}
+            <span className="text-secondary dark:text-other">Us Today</span>
           </h2>
 
           <p className="mx-auto max-w-2xl text-lg text-slate-600 dark:text-slate-300">
-            Have a project in mind? Need IT solutions or consulting?
-            Let's discuss how we can help your business grow.
+            Have a project in mind? Need IT solutions or consulting? Let's
+            discuss how we can help your business grow.
           </p>
         </motion.div>
 
         {/* Main Section */}
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-          
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -113,7 +133,6 @@ export default function ContactSection() {
             className="glass-panel p-8"
           >
             <form onSubmit={handleSubmit} className="space-y-5">
-              
               {/* Name + Email */}
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <input
@@ -173,23 +192,13 @@ export default function ContactSection() {
               {/* Button */}
               <motion.button
                 type="submit"
+                disabled={loading}
                 className="btn-gradient w-full rounded-xl py-4 font-semibold shadow-md cursor-pointer"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
+                whileHover={!loading ?{ scale: 1.01 }:{}}
+                whileTap={!loading ?{ scale: 0.99 }:{}}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </motion.button>
-
-              {/* Success Message */}
-              {submitted && (
-                <motion.div
-                  className="rounded-xl bg-emerald-500/20 p-4 text-center text-emerald-400 font-medium"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  Message sent successfully ✅
-                </motion.div>
-              )}
             </form>
           </motion.div>
 
@@ -222,7 +231,9 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <span className="text-xl text-slate-400 group-hover:text-other transition-colors">→</span>
+                <span className="text-xl text-slate-400 group-hover:text-other transition-colors">
+                  →
+                </span>
               </a>
             ))}
 
@@ -233,7 +244,8 @@ export default function ContactSection() {
                   Need urgent assistance?
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  We typically respond within 24 hours. For urgent matters, chat with our support team directly.
+                  We typically respond within 24 hours. For urgent matters, chat
+                  with our support team directly.
                 </p>
               </div>
 
