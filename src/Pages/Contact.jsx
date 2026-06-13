@@ -31,10 +31,10 @@ export default function ContactSection() {
     setLoading(true);
     try {
       await toast.promise(
-        emailjs.send(
+        Promise.all([
+           emailjs.send(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
           {
             name: formData.name,
             email: formData.email,
@@ -44,6 +44,17 @@ export default function ContactSection() {
           },
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
         ),
+        emailjs.send(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_AUTO_REPLY_TEMPLATE_ID,
+          {
+            name: formData.name,
+            email: formData.email,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        )
+        ]),
+        
         {
           loading: "Sending your message...",
           success: "Message sent successfully! We'll get back to you soon.",
@@ -58,7 +69,9 @@ export default function ContactSection() {
         message: "",
       });
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("EmailJS Error:", error);
+
+      toast.error(error?.text || error?.message || "Failed to send message.");
     } finally {
       setLoading(false);
     }
@@ -195,8 +208,8 @@ export default function ContactSection() {
                 type="submit"
                 disabled={loading}
                 className="btn-gradient w-full rounded-xl py-4 font-semibold shadow-md cursor-pointer"
-                whileHover={!loading ?{ scale: 1.01 }:{}}
-                whileTap={!loading ?{ scale: 0.99 }:{}}
+                whileHover={!loading ? { scale: 1.01 } : {}}
+                whileTap={!loading ? { scale: 0.99 } : {}}
               >
                 {loading ? "Sending..." : "Send Message"}
               </motion.button>
