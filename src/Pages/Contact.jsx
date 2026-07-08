@@ -70,8 +70,7 @@ export default function ContactSection() {
         subject: "",
         message: "",
       });
-    } 
-    catch (error) {
+    } catch (error) {
       console.error("EmailJS Error:", error);
 
       toast.error(error?.text || error?.message || "Failed to send message.");
