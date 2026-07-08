@@ -87,8 +87,8 @@ export default function ContactSection() {
     {
       icon: <Phone size={24} className="text-secondary dark:text-other" />,
       title: "Phone",
-      value: "+233 534 819 667",
-      link: "tel:+233534819667",
+      value: "+233 509 659 832",
+      link: "tel:+233509659832",
     },
     {
       icon: <Globe size={24} className="text-secondary dark:text-other" />,
@@ -244,6 +244,7 @@ export default function ContactSection() {
                     </p>
                   </div>
                 </div>
+                
 
                 <span className="text-xl text-slate-400 group-hover:text-other transition-colors">
                   →
@@ -264,7 +265,7 @@ export default function ContactSection() {
               </div>
 
               <a
-                href="https://wa.me/233597788861"
+                href="https://wa.me/233509659832"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gradient inline-flex items-center gap-2 rounded-xl px-6 py-3 font-semibold shadow-md transition-all z-10"
