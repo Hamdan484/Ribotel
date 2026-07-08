@@ -59,8 +59,6 @@ export default function ContactSection() {
           loading: "Sending your message...",
           success: "Message sent successfully! We'll get back to you soon.",
           error: "Failed to send message. Please try again later.",
-        
-          
         },
       );
       setFormData({
@@ -70,8 +68,7 @@ export default function ContactSection() {
         subject: "",
         message: "",
       });
-    } 
-    catch (error) {
+    } catch (error) {
       console.error("EmailJS Error:", error);
     } finally {
       setLoading(false);
