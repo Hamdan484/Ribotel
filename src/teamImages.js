@@ -1,5 +1,5 @@
 import Williams from "./teamImages/Williams.jpeg";
-import Ebenezer from "./teamImages/Ebenezer.jpg";
+import Ebenezer from "./teamImages/ebenezer.jpg";
 import Francis from "./teamImages/Francis.png";
 import Bernard from "./teamImages/bernard.jpeg";
 import Samuel from "./teamImages/samuel.png";
