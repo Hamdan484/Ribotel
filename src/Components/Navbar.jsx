@@ -41,9 +41,8 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <span className="font-display text-2xl font-bold tracking-tight text-primary dark:text-other">
-              Ribotel
-            </span>
+          
+            <img className="w-50 dark:text-other" src="../src/assets/Images/ribotellogo.svg" alt="Ribotel Logo" />
           </Link>
 
           {/* Desktop Links */}
