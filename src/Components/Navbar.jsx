@@ -40,7 +40,11 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           
           {/* Logo */}
-          <img src="../src/assets/Images/ribotellogo.svg" alt="Ribotel Logo" className={`h-10 w-36 object-cover ${isDark ? "bg-gradient" : "bg-gradient-to-r from-primary to-secondary"} p-1 rounded-xl`}/>
+          <Link to="/" className="flex items-center gap-2">
+            <span className="font-display text-2xl font-bold tracking-tight text-primary dark:text-other">
+              Ribotel
+            </span>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
