@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTheme } from "../Context/Theme_context";
 import { MotionLink } from "../Common/MotionLink";
@@ -31,6 +32,7 @@ import {
 
 export default function ServicesSection() {
   const { isDark } = useTheme();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -42,6 +44,30 @@ export default function ServicesSection() {
     { id: "creative", name: "Creative & Writing" },
     { id: "training", name: "Training" },
   ];
+
+  useEffect(() => {
+    const catParam = searchParams.get("category");
+    if (catParam && categories.some((c) => c.id === catParam)) {
+      setActiveCategory(catParam);
+      setTimeout(() => {
+        const element = document.getElementById("services-list");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150);
+    } else {
+      setActiveCategory("all");
+    }
+  }, [searchParams]);
+
+  const handleCategoryClick = (catId) => {
+    setActiveCategory(catId);
+    if (catId === "all") {
+      setSearchParams({});
+    } else {
+      setSearchParams({ category: catId });
+    }
+  };
 
   const services = [
     {
@@ -291,7 +317,7 @@ export default function ServicesSection() {
         </div>
       </section>
 
-      <section className="py-20 relative">
+      <section id="services-list" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           
           {/* Header */}
@@ -315,7 +341,7 @@ export default function ServicesSection() {
               {categories.map((cat) => (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
+                  onClick={() => handleCategoryClick(cat.id)}
                   className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
                     activeCategory === cat.id
                       ? "bg-[#36ADA3] text-white shadow-lg shadow-[#36ADA3]/20 scale-105"
