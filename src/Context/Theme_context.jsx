@@ -1,19 +1,10 @@
-import { createContext, useState, useContext, useEffect } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(!isDark);
+  const isDark = false;
+  const toggleTheme = () => {};
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
@@ -22,7 +13,7 @@ export function ThemeProvider({ children }) {
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components -- useTheme is a stable companion export to ThemeProvider
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTheme() {
   return useContext(ThemeContext);
 }

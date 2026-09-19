@@ -6,26 +6,26 @@ export default function WhyChooseUs() {
     {
       id: "fast-reliable",
       icon: <Zap className="h-6 w-6" />,
-      title: "Fast & Reliable",
-      description: "Quick turnaround with consistent quality and reliability.",
+      title: "Lightning Fast Delivery",
+      description: "We don't just meet deadlines; we crush them. Expect rapid prototyping and swift execution without ever compromising on top-tier quality.",
     },
     {
       id: "goal-oriented",
       icon: <Target className="h-6 w-6" />,
-      title: "Goal-Oriented",
-      description: "Focused on achieving your business objectives and KPIs.",
+      title: "Laser-Focused on ROI",
+      description: "Your success is our obsession. We build solutions specifically designed to drive your KPIs, boost revenue, and create lasting business impact.",
     },
     {
       id: "growth-focused",
       icon: <Sprout className="h-6 w-6" />,
-      title: "Growth Focused",
-      description: "Solutions designed to scale with your business growth.",
+      title: "Engineered for Scale",
+      description: "Future-proof your business. Our architecture and strategies are robustly designed to scale seamlessly as your enterprise grows.",
     },
     {
       id: "innovative",
       icon: <Lightbulb className="h-6 w-6" />,
-      title: "Innovative",
-      description: "Always exploring new technologies and methodologies.",
+      title: "Unrelenting Innovation",
+      description: "We constantly push boundaries, integrating the latest tech trends and creative methodologies to keep you steps ahead of the competition.",
     },
   ];
 
@@ -56,17 +56,26 @@ export default function WhyChooseUs() {
               transition={{ delay: idx * 0.1, duration: 0.55 }}
               viewport={{ once: true }}
             >
-              <div className="glass-panel p-8 text-center space-y-4 h-full flex flex-col justify-between">
-                <div className="space-y-4">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-other/10 text-other dark:bg-other/20">
+              <div className="bg-white rounded-tr-xl rounded-bl-xl rounded-br-xl rounded-tl-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden h-full">
+                {/* Top Banner Area */}
+                <div className="relative h-24 w-full overflow-hidden bg-slate-50 border-b border-slate-100">
+                  <div className="absolute inset-0 bg-[url('/section-pattern.png')] opacity-10" />
+                </div>
+                
+                <div className="p-6 relative flex-1 flex flex-col">
+                  {/* Floating Icon */}
+                  <div className="absolute -top-8 left-6 h-14 w-14 bg-[#071333] rounded-full flex items-center justify-center text-white border-4 border-white shadow-md group-hover:-translate-y-2 group-hover:bg-[#36ADA3] transition-all duration-300">
                     {item.icon}
                   </div>
-                  <h3 className="font-display text-lg font-bold text-primary dark:text-slate-100">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {item.description}
-                  </p>
+
+                  <div className="pt-6 space-y-3 flex-1">
+                    <h3 className="font-display text-xl font-bold text-[#071333] leading-tight group-hover:text-blue-600 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.article>

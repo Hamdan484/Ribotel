@@ -5,6 +5,7 @@ import Bernard from "./teamImages/bernard.jpeg";
 import Samuel from "./teamImages/samuel.png";
 import Hamadan from "./teamImages/hamdan.jpeg";
 import Simon from "./teamImages/simon.jpeg";
+import Zakaria from "./teamImages/zakaria.png";
 
 export const teamImages = [
     {
@@ -25,7 +26,7 @@ export const teamImages = [
         id: "francis",
         image: Francis,
         name: "Francis Kusi",
-        role: "​Chief Technical Officer (CTO)",
+        role: "​Chief Technology Officer (CTO)",
         bio: "The CTO of Ribotel Technologies, leading technology strategy and innovation. He specializes in web and mobile development, AI solutions, automation, and data analytics, building scalable digital products that help businesses grow and succeed across Ghana and Africa.",
         objectFit: "object-cover",
         objectPosition: "object-top",
@@ -57,6 +58,15 @@ export const teamImages = [
         name: "Williams Boateng",
         role: "Developer Intern",
         bio: "Developer Intern at Ribotel Technologies, building responsive web interfaces, implementing UI/UX designs, optimizing performance, and collaborating with developers in an agile environment.",
+        objectFit: "object-cover",
+        objectPosition: "object-top",
+    },
+    {
+        id: "zakaria",
+        image: Zakaria,
+        name: "Zakaria Lukman",
+        role: "Accountant",
+        bio: "Accountant at Ribotel Technologies, managing financial operations, budgeting, and ensuring the company's financial health and stability.",
         objectFit: "object-cover",
         objectPosition: "object-top",
     },

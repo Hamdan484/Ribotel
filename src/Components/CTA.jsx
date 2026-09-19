@@ -63,11 +63,11 @@ export default function CTA() {
         >
           <p className="text-sm text-slate-300">Need immediate assistance?</p>
           <a
-            href="mailto:info@ribotel.com"
+            href="mailto:info.ribotel@gmail.com"
             className="inline-flex items-center gap-2 text-lg font-bold text-other hover:text-white transition-colors"
           >
             <Mail className="h-5 w-5" />
-            info@ribotel.com
+            info.ribotel@gmail.com
           </a>
         </motion.div>
       </div>

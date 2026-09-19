@@ -37,7 +37,7 @@ export default function TeamPreview() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="glass-panel overflow-hidden flex flex-col justify-between"
+              className="bg-white rounded-tr-xl rounded-bl-xl rounded-br-xl rounded-tl-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden"
             >
               <div>
                 {/* Photo container */}
@@ -56,13 +56,13 @@ export default function TeamPreview() {
 
                 {/* Content */}
                 <div className="p-6 space-y-2 text-left">
-                  <h3 className="font-display text-xl font-bold text-primary dark:text-slate-100">
+                  <h3 className="font-display text-xl font-bold text-[#071333] group-hover:text-blue-600 transition-colors">
                     {member.name}
                   </h3>
-                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-other">
+                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#36ADA3]">
                     {member.role}
                   </span>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-2">
+                  <p className="text-sm text-slate-500 leading-relaxed pt-2">
                     {member.bio}
                   </p>
                 </div>
