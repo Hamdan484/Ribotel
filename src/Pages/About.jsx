@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MotionLink } from "../Common/MotionLink";
 import { Target, Lightbulb, Users, Award, Briefcase, Rocket } from "lucide-react";
+import TeamPreview from "../Components/Team_preview";
 
 export default function AboutSection() {
   const values = [
@@ -182,6 +183,9 @@ export default function AboutSection() {
           </motion.div>
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamPreview />
     </div>
   );
 }
