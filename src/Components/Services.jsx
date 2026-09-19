@@ -69,28 +69,37 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="glass-panel p-8 flex flex-col justify-between"
+              className="bg-white rounded-tr-xl rounded-bl-xl rounded-br-xl rounded-tl-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden h-full"
             >
-              <div className="space-y-5">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-other/10 text-other dark:bg-other/20">
+              {/* Top Banner Area */}
+              <div className="relative h-32 w-full overflow-hidden bg-slate-50 border-b border-slate-100">
+                <div className="absolute inset-0 bg-[url('/section-pattern.png')] opacity-10" />
+              </div>
+              
+              <div className="p-8 relative flex-1 flex flex-col">
+                {/* Floating Icon */}
+                <div className="absolute -top-10 left-6 h-16 w-16 bg-[#071333] rounded-full flex items-center justify-center text-white border-4 border-white shadow-md group-hover:-translate-y-2 group-hover:bg-[#36ADA3] transition-all duration-300">
                   {cat.icon}
                 </div>
-                <h3 className="font-display text-xl font-bold text-primary dark:text-slate-100">
-                  {cat.title}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {cat.description}
-                </p>
-              </div>
 
-              <div className="pt-6 mt-6 border-t border-slate-100 dark:border-tertiary/10">
-                <MotionLink
-                  to="/services"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-primary dark:text-other dark:hover:text-other/80"
-                >
-                  View Details
-                  <ArrowRight className="h-4 w-4" />
-                </MotionLink>
+                <div className="pt-6 space-y-4 flex-1">
+                  <h3 className="font-display text-2xl font-bold text-[#071333] leading-tight group-hover:text-blue-600 transition-colors">
+                    {cat.title}
+                  </h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    {cat.description}
+                  </p>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-slate-100">
+                  <MotionLink
+                    to="/services"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-[#36ADA3] hover:text-[#2A8B83] transition-colors"
+                  >
+                    View Details
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </MotionLink>
+                </div>
               </div>
             </motion.article>
           ))}

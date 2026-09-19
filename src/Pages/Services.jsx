@@ -50,6 +50,7 @@ export default function ServicesSection() {
       icon: <Laptop className="h-6 w-6" />,
       title: "Microsoft Office Installation",
       description: "Full installation of Word, Excel, PowerPoint, and the complete Office suite.",
+      image: "/images/office_install_new.png",
     },
     {
       id: 2,
@@ -57,6 +58,7 @@ export default function ServicesSection() {
       icon: <Key className="h-6 w-6" />,
       title: "Microsoft 365 Activation",
       description: "Activate your Microsoft 365 subscription for full access to all Office apps.",
+      image: "/images/office_365_activate.png",
     },
     {
       id: 3,
@@ -64,6 +66,7 @@ export default function ServicesSection() {
       icon: <Sparkles className="h-6 w-6" />,
       title: "Windows Activation",
       description: "Genuine Windows activation to unlock all features and receive updates.",
+      image: "/images/windows10-installation.avif",
     },
     {
       id: 4,
@@ -71,6 +74,7 @@ export default function ServicesSection() {
       icon: <Laptop className="h-6 w-6" />,
       title: "Windows 10 Installation",
       description: "Clean installation of Windows 10 with all necessary drivers and updates.",
+      image: "/images/windows10-installation.avif",
     },
     {
       id: 5,
@@ -78,6 +82,7 @@ export default function ServicesSection() {
       icon: <Laptop className="h-6 w-6" />,
       title: "Windows 11 Installation",
       description: "Upgrade or fresh install of Windows 11 with optimized settings.",
+      image: "/images/windows11-installation.jpg",
     },
     {
       id: 6,
@@ -85,6 +90,7 @@ export default function ServicesSection() {
       icon: <ShieldCheck className="h-6 w-6" />,
       title: "Antivirus Installation",
       description: "Install and configure reliable antivirus protection for your device.",
+      image: "/images/antivirus-installation.jpg",
     },
     {
       id: 7,
@@ -92,6 +98,7 @@ export default function ServicesSection() {
       icon: <Cpu className="h-6 w-6" />,
       title: "Driver Installation",
       description: "Install missing or outdated drivers to ensure hardware compatibility.",
+      image: "/images/driver-installation-new.jpg",
     },
     {
       id: 8,
@@ -99,6 +106,7 @@ export default function ServicesSection() {
       icon: <Download className="h-6 w-6" />,
       title: "Software Installation",
       description: "Install any legitimate software you need for your work or projects.",
+      image: "/images/software_install_new.png",
     },
     {
       id: 9,
@@ -106,6 +114,7 @@ export default function ServicesSection() {
       icon: <Wrench className="h-6 w-6" />,
       title: "Troubleshooting",
       description: "Diagnose and fix common laptop issues, errors, and performance problems.",
+      image: "/images/troubleshooting_new.png",
     },
     {
       id: 10,
@@ -113,6 +122,7 @@ export default function ServicesSection() {
       icon: <Code className="h-6 w-6" />,
       title: "Coding Tools Setup",
       description: "Set up IDEs, compilers, runtimes, and development environments.",
+      image: "/images/coding_tools_logos.png",
     },
     {
       id: 11,
@@ -120,6 +130,7 @@ export default function ServicesSection() {
       icon: <Database className="h-6 w-6" />,
       title: "Database Installation",
       description: "Install and configure MySQL, PostgreSQL, MongoDB, or other databases.",
+      image: "/images/database_install.png",
     },
     {
       id: 12,
@@ -127,6 +138,7 @@ export default function ServicesSection() {
       icon: <Gauge className="h-6 w-6" />,
       title: "Laptop Optimization",
       description: "Speed up your laptop by cleaning junk, optimizing startup, and tuning settings.",
+      image: "/images/laptop_optimization_new.png",
     },
     {
       id: 13,
@@ -134,6 +146,7 @@ export default function ServicesSection() {
       icon: <Globe className="h-6 w-6" />,
       title: "Website Development",
       description: "Custom, responsive websites built to elevate your brand and online presence.",
+      image: "/images/web-apps.jpg",
     },
     {
       id: 14,
@@ -141,6 +154,7 @@ export default function ServicesSection() {
       icon: <Smartphone className="h-6 w-6" />,
       title: "Mobile App Development",
       description: "Native and cross-platform mobile apps tailored to your needs.",
+      image: "/images/mobile_app_dev.png",
     },
     {
       id: 15,
@@ -148,6 +162,7 @@ export default function ServicesSection() {
       icon: <AppWindow className="h-6 w-6" />,
       title: "Web App Development",
       description: "Powerful web applications with modern frameworks and scalable architecture.",
+      image: "/images/webapp_dashboard.png",
     },
     {
       id: 16,
@@ -155,6 +170,7 @@ export default function ServicesSection() {
       icon: <BarChart3 className="h-6 w-6" />,
       title: "Data Analytics",
       description: "Transform raw data into insights using Excel, Power BI, and Tableau.",
+      image: "/images/data-analytics.jpg",
     },
     {
       id: 17,
@@ -162,6 +178,7 @@ export default function ServicesSection() {
       icon: <Palette className="h-6 w-6" />,
       title: "Graphic Design",
       description: "Eye-catching logos, flyers, posters, and brand visuals for any project.",
+      image: "/images/graphic-design.jpg",
     },
     {
       id: 18,
@@ -169,6 +186,7 @@ export default function ServicesSection() {
       icon: <Film className="h-6 w-6" />,
       title: "Video Editing",
       description: "Professional video editing, color grading, and motion graphics.",
+      image: "/images/video-editing.avif",
     },
     {
       id: 19,
@@ -176,6 +194,7 @@ export default function ServicesSection() {
       icon: <FileText className="h-6 w-6" />,
       title: "Article Writing",
       description: "Well-researched, engaging articles, blogs, and content writing.",
+      image: "/images/article-writing.jpg",
     },
     {
       id: 20,
@@ -183,6 +202,7 @@ export default function ServicesSection() {
       icon: <Presentation className="h-6 w-6" />,
       title: "PowerPoint Slides Creation",
       description: "Stunning, professional presentation slides for any occasion.",
+      image: "/images/powerpoint-creation.webp",
     },
     {
       id: 21,
@@ -190,6 +210,7 @@ export default function ServicesSection() {
       icon: <GraduationCap className="h-6 w-6" />,
       title: "Computer Tutorials",
       description: "One-on-one or group tutorials on software, tools, and IT skills.",
+      image: "/images/computer-tutorials.jpg",
     },
     {
       id: 22,
@@ -197,6 +218,7 @@ export default function ServicesSection() {
       icon: <ClipboardList className="h-6 w-6" />,
       title: "Report Writing & Design",
       description: "Professional reports with clean formatting, charts, and layouts.",
+      image: "/images/report-writing.jpg",
     },
     {
       id: 23,
@@ -204,6 +226,7 @@ export default function ServicesSection() {
       icon: <Server className="h-6 w-6" />,
       title: "Database Design",
       description: "Design and implement efficient, scalable database systems for your projects.",
+      image: "/images/database-design.jpg",
     },
     {
       id: 24,
@@ -211,6 +234,7 @@ export default function ServicesSection() {
       icon: <Layout className="h-6 w-6" />,
       title: "UI/UX Design",
       description: "User-centered interface and experience design for web and mobile apps.",
+      image: "/images/ui-ux-design.jpg",
     },
   ];
 
@@ -237,113 +261,169 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 text-left">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="flex flex-col bg-slate-50 min-h-screen">
+      
+      {/* Hero Section */}
+      <section className="relative h-[65vh] min-h-[500px] flex flex-col items-center justify-center text-center px-6">
+        {/* Background Image & Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/images/services_hero.png')` }}
+        />
+        <div className="absolute inset-0 bg-[#071333]/85 mix-blend-multiply" />
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-12 space-y-4">
-          <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold bg-secondary/10 text-secondary dark:bg-other/10 dark:text-other">
-            Our Offerings
-          </span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold tracking-tight text-primary dark:text-slate-100">
-            Services We <span className="text-secondary dark:text-other">Offer</span>
-          </h1>
-          <p className="text-lg text-slate-600 dark:text-slate-300">
-            Professional technical support, software installation, development, and training designed to empower your growth.
-          </p>
+        <div className="relative z-10 max-w-3xl space-y-4 -mt-20">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight"
+          >
+            Our Services
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-slate-200"
+          >
+            Comprehensive tech solutions tailored to power your business forward
+          </motion.p>
         </div>
+      </section>
 
-        {/* Search & Category Filter bar */}
-        <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between mb-12">
-          {/* Search bar */}
-          <div className="relative flex-1 max-w-md">
-            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
-              <Search className="h-5 w-5" />
-            </span>
-            <input
-              type="text"
-              placeholder="Search services..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className={`w-full rounded-xl border pl-10 pr-4 py-3 outline-none transition-all placeholder:text-slate-400 text-sm ${
-                isDark
-                  ? "border-white/10 bg-slate-950/50 text-slate-100 focus:border-other/60 focus:ring-2 focus:ring-other/20"
-                  : "border-slate-200 bg-slate-50 text-slate-900 focus:border-secondary focus:ring-2 focus:ring-secondary/20"
-              }`}
-            />
-          </div>
-
-          {/* Category Filters */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`rounded-full px-4 py-2 text-xs font-medium transition-all ${
-                  activeCategory === cat.id
-                    ? "bg-secondary text-white shadow-sm dark:bg-other"
-                    : isDark
-                      ? "border border-white/10 bg-slate-900/60 text-slate-300 hover:bg-slate-800/80"
-                      : "border border-slate-200 bg-white/80 text-slate-700 hover:bg-slate-50"
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Services Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          key={activeCategory + searchQuery}
-        >
-          {filteredServices.map((service) => (
-            <motion.div
-              key={service.id}
-              variants={cardVariants}
-              whileHover="hover"
-              className="glass-panel p-8 flex flex-col justify-between"
-            >
-              <div className="space-y-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-other/10 text-other dark:bg-other/20">
-                  {service.icon}
-                </div>
-                <h3 className="font-display text-2xl font-bold text-primary dark:text-slate-100">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-8 border-t border-slate-100 dark:border-tertiary/10">
-                <MotionLink
-                  to="/contact"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-primary dark:text-other dark:hover:text-other/80"
-                >
-                  Book Session
-                  <ArrowRight className="h-4 w-4" />
-                </MotionLink>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Empty State */}
-        {filteredServices.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-lg text-slate-600 dark:text-slate-400">
-              No services found matching your search.
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          
+          {/* Header */}
+          <div className="text-center mb-16 space-y-4">
+            <div className="flex items-center justify-center gap-2">
+              <div className="h-[1px] w-6 bg-[#36ADA3]"></div>
+              <span className="text-[#36ADA3] font-semibold text-sm tracking-wide">Our Services</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#071333]">
+              Services That Fit <br className="hidden md:block" /> <span className="text-[#36ADA3]">Your Needs</span>
+            </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto mt-4">
+              We provide both on-site and remote services. No matter your location, our team is ready to assist you.
             </p>
           </div>
-        )}
 
-      </div>
-    </section>
+          {/* Search & Category Filter bar */}
+          <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-center mb-16 max-w-4xl mx-auto">
+            {/* Category Filters */}
+            <div className="flex flex-wrap gap-2 justify-center">
+              {categories.map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                    activeCategory === cat.id
+                      ? "bg-[#36ADA3] text-white shadow-lg shadow-[#36ADA3]/20 scale-105"
+                      : "bg-white border border-slate-200 text-slate-600 hover:text-[#071333] hover:border-slate-300"
+                  }`}
+                >
+                  {cat.name}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Cards Grid */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            key={activeCategory + searchQuery}
+          >
+            {filteredServices.map((service) => {
+              // Use service specific image or fallback to a default
+              const imageSrc = service.image || "/about_showcase_1.jpg";
+
+              return (
+                <motion.div
+                  key={service.id}
+                  variants={cardVariants}
+                  whileHover="hover"
+                  className="bg-white rounded-tr-xl rounded-bl-xl rounded-br-xl rounded-tl-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden"
+                >
+                  {/* Top Image Area */}
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-700"
+                      style={{ backgroundImage: `url('${imageSrc}')` }}
+                    />
+                    <div className="absolute inset-0 bg-[#071333]/30 mix-blend-multiply group-hover:bg-transparent transition-colors duration-500"/>
+                  </div>
+                  
+                  {/* Content Area */}
+                  <div className="p-8 relative flex-1 flex flex-col">
+                    {/* Floating Icon */}
+                    <div className="absolute -top-10 left-6 h-16 w-16 bg-[#071333] rounded-full flex items-center justify-center text-white border-4 border-white shadow-md group-hover:-translate-y-2 group-hover:bg-[#36ADA3] transition-all duration-300">
+                      {service.icon}
+                    </div>
+
+                    <div className="pt-6 space-y-4 flex-1">
+                      <h3 className="font-display text-2xl font-bold text-[#071333] leading-tight">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    <div className="pt-6 mt-4 border-t border-slate-100">
+                      <MotionLink
+                        to="/contact"
+                        className="inline-flex items-center gap-2 text-sm font-bold text-[#36ADA3] hover:text-[#2A8B83] transition-colors"
+                      >
+                        Book Now 
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </MotionLink>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+
+          {/* Empty State */}
+          {filteredServices.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-lg text-slate-500">
+                No services found matching your search.
+              </p>
+            </div>
+          )}
+
+
+
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-slate-100 relative">
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-6 relative z-10">
+          <div className="flex items-center justify-center gap-2">
+            <div className="h-[1px] w-6 bg-[#36ADA3]"></div>
+            <span className="text-slate-500 font-semibold text-sm tracking-wide">Contact Us</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-[#071333]">
+            Have a Project Idea?
+          </h2>
+          <div className="pt-6">
+            <MotionLink
+              to="/contact"
+              className="inline-block bg-[#36ADA3] hover:bg-[#2A8B83] text-white px-10 py-4 rounded-xl font-bold text-lg shadow-xl shadow-[#36ADA3]/20 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Let's Talk!
+            </MotionLink>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

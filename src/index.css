@@ -10,7 +10,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
 
   /* Theme tokens (Light) */
   --bg: #f8fafc;
@@ -84,7 +84,7 @@
   }
 
   .font-display {
-    font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Raleway", ui-sans-serif, system-ui, sans-serif;
   }
 ::selection {
     @apply bg-other/25 dark:bg-tertiary/30 text-slate-900 dark:text-white;
@@ -225,7 +225,20 @@
 
 
   .glass-panel {
-    @apply rounded-2xl border border-slate-200/50 dark:border-tertiary/20 bg-white dark:bg-[#121358]/30 shadow-sm transition-all duration-300;
+    @apply rounded-2xl border border-white/40 dark:border-white/10 bg-white/60 dark:bg-[#121358]/40 backdrop-blur-xl shadow-xl shadow-slate-200/50 dark:shadow-black/20 transition-all duration-300 relative overflow-hidden;
+  }
+  
+  .glass-panel::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/40 to-transparent dark:from-white/5 opacity-0 transition-opacity duration-300 pointer-events-none;
+  }
+  
+  .glass-panel:hover::before {
+    @apply opacity-100;
+  }
+
+  .premium-input {
+    @apply w-full rounded-xl border border-white/40 dark:border-white/10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md px-4 py-3 outline-none transition-all duration-300 placeholder:text-slate-500 dark:placeholder:text-slate-400 text-sm text-slate-900 dark:text-slate-100 focus:bg-white dark:focus:bg-slate-900 focus:border-[#ff8c00] focus:ring-4 focus:ring-[#ff8c00]/20 shadow-inner;
   }
 
   .btn-gradient {

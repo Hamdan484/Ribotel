@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,6 +38,15 @@ export default function Footer() {
     {
       icon: (
         <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      ),
+      label: "X (Twitter)",
+      url: "https://x.com/RibotelTech",
+    },
+    {
+      icon: (
+        <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
   <path d="M12.017 2.003a9.944 9.944 0 00-8.507 15.1L2 22l5.022-1.315a9.98 9.98 0 004.995 1.337h.004c5.514 0 9.996-4.48 9.998-9.995a9.95 9.95 0 00-2.93-7.073 9.95 9.95 0 00-7.072-2.951zm5.82 14.404c-.245.69-1.448 1.319-1.99 1.405-.51.08-1.153.115-1.86-.11-.43-.137-.98-.32-1.69-.626-2.97-1.284-4.904-4.278-5.053-4.477-.147-.198-1.21-1.61-1.21-3.071s.767-2.178 1.038-2.476c.27-.297.59-.372.787-.372.197 0 .394.002.566.01.182.008.426-.069.667.51.246.593.836 2.05.91 2.2.074.148.123.322.025.52-.099.198-.148.322-.295.495-.148.173-.312.387-.444.52-.148.148-.302.308-.13.605.173.297.77 1.269 1.653 2.056 1.136 1.013 2.094 1.326 2.39 1.474.296.148.468.124.64-.074.173-.198.738-.861.935-1.158.197-.297.394-.247.665-.148.27.099 1.72.812 2.015.96.296.148.493.223.566.347.074.124.074.714-.172 1.405z"/>
 </svg>
       ),
@@ -51,7 +60,7 @@ export default function Footer() {
         </svg>
       ),
       label: "Facebook",
-      url: "#",
+      url: "https://www.facebook.com/profile.php?id=61594326099758",
     },
     {
       icon: (
@@ -68,64 +77,35 @@ export default function Footer() {
         </svg>
       ),
       label: "Instagram",
-      url: "#",
+      url: "https://www.instagram.com/ribotel_technologies/",
     },
   ];
 
   return (
-    <footer className="border-t border-slate-200/50 dark:border-tertiary/10 bg-slate-50/50 dark:bg-slate-950/20 text-left transition-colors duration-300">
+    <footer className="relative border-t border-slate-800 bg-[#040A1E] text-left overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#36ADA3] rounded-full mix-blend-multiply filter blur-[128px] opacity-20 pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-10 pointer-events-none" />
       
-      {/* Top Newsletter Band */}
-      <div className="border-b border-slate-200/50 dark:border-tertiary/10 py-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold text-primary dark:text-slate-100">
-                Stay Updated
-              </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                Get the latest news and updates about our services and projects.
-              </p>
-            </div>
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 rounded-xl border border-slate-300 dark:border-tertiary/20 px-4 py-3 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-other outline-none text-primary dark:text-slate-100"
-                required
-              />
-              <button
-                type="submit"
-                className="btn-gradient px-6 py-3 font-semibold rounded-xl"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
       {/* Main Links */}
-      <div className="py-16">
+      <div className="relative z-10 py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             
             {/* Logo + About */}
-            <div className="lg:col-span-4 space-y-6">
-              <Link to="/" className="flex items-center gap-2">
-                <span className="font-display text-2xl font-bold tracking-tight text-primary dark:text-other">
-                  Ribotel
-                </span>
+            <div className="lg:col-span-4 space-y-8">
+              <Link to="/" className="inline-block">
+                <img src="/ribotel_logo.png" alt="Ribotel Logo" className="h-16 md:h-20 w-auto object-contain brightness-0 invert transition-transform hover:scale-105"/>
               </Link>
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
-                Bridging the digital divide through innovative IT solutions and empowerment in Ghana.
+              <p className="text-base text-slate-400 leading-relaxed max-w-sm">
+                Bridging the digital divide through innovative IT solutions and empowerment in Ghana. Building the future, today.
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-4">
                 {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.url}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-tertiary/20 text-slate-600 dark:text-slate-300 hover:border-other hover:text-other dark:hover:border-other dark:hover:text-other transition-all"
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-300 hover:bg-[#36ADA3] hover:border-[#36ADA3] hover:text-white hover:shadow-[0_0_20px_rgba(54,173,163,0.5)] transition-all duration-300 hover:-translate-y-1"
                     title={social.label}
                   >
                     {social.icon}
@@ -138,17 +118,18 @@ export default function Footer() {
             <div className="lg:col-span-4 grid grid-cols-2 gap-8">
               {footerSections.map((section) => (
                 <div key={section.title} className="space-y-6">
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-primary dark:text-slate-100">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-white">
                     {section.title}
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-4">
                     {section.links.map((link) => (
                       <li key={link.name}>
                         <Link
                           to={link.href}
-                          className="text-sm text-slate-600 dark:text-slate-400 hover:text-other transition-colors"
+                          className="group inline-flex items-center text-slate-400 hover:text-[#36ADA3] transition-colors text-base"
                         >
                           {link.name}
+                          <ArrowUpRight className="h-3 w-3 ml-1 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
                         </Link>
                       </li>
                     ))}
@@ -157,29 +138,44 @@ export default function Footer() {
               ))}
             </div>
 
-            {/* Contact Details */}
+            {/* Contact Details & CTA */}
             <div className="lg:col-span-4 space-y-6">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-primary dark:text-slate-100">
+              <h4 className="text-sm font-bold uppercase tracking-widest text-white">
                 Contact Us
               </h4>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3 text-sm">
-                  <Mail className="h-5 w-5 shrink-0 text-other" />
-                  <a href="mailto:info@ribotel.com" className="text-slate-600 dark:text-slate-400 hover:text-other">
-                    info@ribotel.com
-                  </a>
+              <ul className="space-y-5">
+                <li className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800/50 border border-slate-700/50 text-[#36ADA3]">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">Email</span>
+                    <a href="mailto:info.ribotel@gmail.com" className="text-slate-300 hover:text-[#36ADA3] transition-colors">
+                      info.ribotel@gmail.com
+                    </a>
+                  </div>
                 </li>
-                <li className="flex items-start gap-3 text-sm">
-                  <Phone className="h-5 w-5 shrink-0 text-other" />
-                  <a href="tel:+233509659832" className="text-slate-600 dark:text-slate-400 hover:text-other">
-                    +233 509 659 832
-                  </a>
+                <li className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800/50 border border-slate-700/50 text-[#36ADA3]">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">Phone</span>
+                    <a href="tel:+233509659832" className="text-slate-300 hover:text-[#36ADA3] transition-colors">
+                      +233 509 659 832
+                    </a>
+                  </div>
                 </li>
-                <li className="flex items-start gap-3 text-sm">
-                  <MapPin className="h-5 w-5 shrink-0 text-other" />
-                  <span className="text-slate-600 dark:text-slate-400">
-                    Kumasi, Ashanti, Ghana
-                  </span>
+                <li className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800/50 border border-slate-700/50 text-[#36ADA3]">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-1">Location</span>
+                    <span className="text-slate-300">
+                      Kumasi, Ashanti, Ghana
+                    </span>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -189,21 +185,18 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-200/50 dark:border-tertiary/10 py-8 bg-slate-100/50 dark:bg-slate-950/40">
+      <div className="relative z-10 border-t border-slate-800/80 bg-slate-900/50 backdrop-blur-md py-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-slate-500 dark:text-slate-400">
+          <p className="text-sm text-slate-500 font-medium">
             &copy; {currentYear} Ribotel Technologies. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Service", "Cookies"].map((label) => (
-              <a
-                key={label}
-                href="#"
-                className="text-xs text-slate-500 dark:text-slate-400 hover:text-other"
-              >
-                {label}
-              </a>
-            ))}
+          <div className="flex gap-8">
+            <Link to="/privacy-policy" className="text-sm font-medium text-slate-500 hover:text-[#36ADA3] transition-colors">
+              Privacy Policy
+            </Link>
+            <Link to="/terms-of-service" className="text-sm font-medium text-slate-500 hover:text-[#36ADA3] transition-colors">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>

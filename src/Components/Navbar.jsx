@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTheme } from "../Context/Theme_context";
 import { MotionLink } from "../Common/MotionLink";
 
@@ -10,6 +10,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const location = useLocation();
+  const isTransparent = ["/", "/about", "/contact", "/portfolio"].includes(location.pathname) && !scrolled;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 15);
@@ -19,8 +20,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Contact", href: "/contact" },
   ];
@@ -28,9 +29,9 @@ export default function Navbar() {
   return (
     <motion.nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 dark:bg-[#07081c]/95 border-b border-slate-200/50 dark:border-tertiary/10 shadow-sm backdrop-blur-md"
-          : "bg-transparent border-b border-transparent"
+        isTransparent
+          ? "bg-transparent border-b border-transparent"
+          : "bg-white/95 border-b border-slate-200/50 shadow-sm backdrop-blur-md"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -41,8 +42,13 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-         
-            <img src="../src/assets/Images/ribotellogo.svg" alt="Ribotel Logo" className={`h-10 w-36 object-cover ${isDark ? "bg-gradient" : "bg-gradient-to-r from-primary to-secondary"} p-1 rounded-xl`}/>
+            <img 
+              src="/ribotel_logo.png" 
+              alt="Ribotel Logo" 
+              className={`h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-all duration-300 ${
+                isTransparent ? "brightness-0 invert" : "brightness-0"
+              }`}
+            />
           </Link>
 
           {/* Desktop Links */}
@@ -53,17 +59,17 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`relative font-medium text-sm transition-colors duration-200 ${
+                  className={`relative text-sm transition-colors duration-200 ${
                     isActive
-                      ? "text-primary dark:text-other"
-                      : "text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-other"
+                      ? (isTransparent ? "text-white font-bold" : "text-primary font-bold")
+                      : (isTransparent ? "text-white/80 hover:text-white font-medium" : "text-slate-600 hover:text-primary font-medium")
                   }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.span
                       layoutId="activeNavTab"
-                      className="absolute -bottom-1.5 left-0 h-0.5 w-full bg-secondary dark:bg-other"
+                      className={`absolute -bottom-1.5 left-0 h-0.5 w-full ${isTransparent ? 'bg-white' : 'bg-secondary'}`}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -74,22 +80,17 @@ export default function Navbar() {
 
           {/* Action buttons */}
           <div className="flex items-center gap-4">
-            {/* Theme Toggle */}
-            <motion.button
-              type="button"
-              onClick={toggleTheme}
-              className="rounded-xl border border-slate-200/60 dark:border-tertiary/20 bg-white/40 dark:bg-slate-900/40 text-slate-700 dark:text-slate-200 p-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              whileTap={{ scale: 0.95 }}
-              aria-label="Toggle Theme"
-            >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </motion.button>
+
 
             {/* Get Started Button */}
             <div className="hidden md:block">
               <MotionLink
                 to="/contact"
-                className="btn-gradient inline-block px-6 py-2.5 text-sm font-semibold"
+                className={`inline-block px-6 py-2.5 text-sm font-semibold rounded-xl transition-all duration-300 ${
+                  isTransparent 
+                    ? "bg-white text-primary hover:bg-slate-100 shadow-lg" 
+                    : "btn-gradient text-white"
+                }`}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -100,7 +101,7 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               type="button"
-              className="p-2 md:hidden text-slate-700 dark:text-slate-200"
+              className={`p-2 md:hidden ${isTransparent ? 'text-white' : 'text-slate-700'}`}
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle Menu"
             >
