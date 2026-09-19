@@ -337,7 +337,7 @@ export default function ServicesSection() {
             viewport={{ once: true, margin: "-100px" }}
             key={activeCategory + searchQuery}
           >
-            {filteredServices.map((service, index) => {
+            {filteredServices.map((service) => {
               // Use service specific image or fallback to a default
               const imageSrc = service.image || "/about_showcase_1.jpg";
 
