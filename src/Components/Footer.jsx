@@ -17,10 +17,10 @@ export default function Footer() {
     {
       title: "Services",
       links: [
-        { name: "Web Development", href: "/services" },
-        { name: "Data Analytics", href: "/services" },
-        { name: "IT Consultancy", href: "/services" },
-        { name: "Training", href: "/services" },
+        { name: "Web Development", href: "/services?category=dev" },
+        { name: "Data Analytics", href: "/services?category=data" },
+        { name: "IT Consultancy", href: "/services?category=support" },
+        { name: "Training", href: "/services?category=training" },
       ],
     },
   ];

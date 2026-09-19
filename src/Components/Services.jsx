@@ -93,7 +93,7 @@ export default function Services() {
 
                 <div className="pt-6 mt-6 border-t border-slate-100">
                   <MotionLink
-                    to="/services"
+                    to={`/services?category=${cat.id}`}
                     className="inline-flex items-center gap-2 text-sm font-bold text-[#36ADA3] hover:text-[#2A8B83] transition-colors"
                   >
                     View Details
